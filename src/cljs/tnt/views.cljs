@@ -26,9 +26,9 @@
       [:p "A.O. (aka TNT) a partagé une feuille de type « Ago ». "
           "Il était loin de se douter des implications de ce geste. "
           "Cette page pousse le bouchon, tout en ne partant pas en cacahuète."]
-      [:p "La phrase de base est (il faut interpréter la croix "
-          "comme un silence, en attendant que j’arrive à faire fonctionner "
-          [:code "react-vexflow"] ") :"]
+      [:p "Voici la phrase de base. Pour simplifier je n’ai pas mis de noire "
+          "pointée (et surtout je ne sais pas le faire faire à "
+          [:code "react-vexflow"] ")."]
       (line [[hq    r8 h8 rq    hq]
              [hq    r8 h8 r8 h8 rq]
              [r8 h8 hq    rq    h8 h8]
