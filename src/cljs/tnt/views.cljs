@@ -125,6 +125,7 @@
               h32 h32 x32 x32 h32 x32 x32 x32
               h32 h32 x32 x32 h32 x32 x32 h32
               h32 x32 x32 h32 x32 h32 h32 x32]])
+      [:p "On ne va pas plus loin : pas de quadruple croche dans ce document."]
 
       [:h4 "2.3 - Sextolets, 2 groupes de 3"]
       [:p "Le contre-temps est sur le quatrième sextolet, comme si on mettait "
