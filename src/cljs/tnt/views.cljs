@@ -18,9 +18,20 @@
         x8  ["x"  8]
         x16 ["x" 16]
         x32 ["x" 32]
+        a (. js/console log vf)
         l1 [3 3 2 3 2 4 1 4 1 4 2 3]
         l2 [1 2 1 2 1 1 1 3 4 1 3 3 1 3 2 1 2]]
     [:div
+      [:> Score {:width 300 :height "x" :clef "percussion"
+                 :staves [[
+             ; ["f5" "q."] code: "BadArguments",
+             ;             message: "Invalid note initialization object:
+             ;                   {\"keys\":[\"f/5\"],\"duration\":\"q.\"}" }
+             ; l.96 node_modules/react-vexflow/node_modules/vexflow/src/note.js
+             ; parseNoteStruct l.481 de tables.js
+
+                           ["f3" "8" ];]
+                           ]]}]
       [:h1 "Exo TNT"]
       [:h2 "Histoire"]
       [:p "A.O. (aka TNT) a partagé une feuille de type « Ago ». "
