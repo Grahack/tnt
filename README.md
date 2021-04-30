@@ -56,6 +56,12 @@ Use your preferred editor or IDE that supports Clojure/ClojureScript development
    [NPM](https://docs.npmjs.com/cli/npm) or if your Node.js installation does not include NPM also install it.
 5. Clone this repo and open a terminal in the `tnt` project root directory
 
+### Use an npm module
+
+* tweak your `package.json`
+* do a `npm install`
+* require it and profit
+
 ### Browser Setup
 
 Browser caching should be disabled when developer tools are open to prevent interference with
