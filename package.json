@@ -1,5 +1,7 @@
 {
 	"name": "tnt",
+	"repository": "https://github.com/grahack/tnt",
+	"license": "CC-PDDC",
 	"scripts": {
 		"watch": "npx shadow-cljs watch app browser-test karma-test",
 		"release": "npx shadow-cljs release app",
