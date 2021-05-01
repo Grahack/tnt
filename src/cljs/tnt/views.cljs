@@ -31,7 +31,8 @@
           "Cette page pousse le bouchon, tout en ne partant pas en cacahuète."]
       [:p "Voici la phrase de base (l’originale était notée avec des noires "
          "pointées et des liaisons) :"]
-      (score "L:1/8" "M:4/4"
+      (score "M:4/4"
+             "L:1/8"
              "|d2 zd z2 d2|d2 zd zd z2|zd d2 z2 dd|z2 zd zd z2|"
              "|dd zd d2 dd|dd z2 d2 z2|dd z2 d2 zd|d2 zd zd d2|"
 
