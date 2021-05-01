@@ -6,7 +6,9 @@
    ))
 
 (defn score [& lines]
-  [:> default {:notation (clojure.string/join "\n" lines)}])
+  (let [with-wedges (map #(clojure.string/replace % "X" "!wedge!d") lines)
+        final-lines with-wedges]
+    [:> default {:notation (clojure.string/join "\n" final-lines)}]))
 
 (defn main-panel []
   (let [rq  ["a4" "qr"] ; rest quarter
@@ -32,6 +34,9 @@
       (score "L:1/8" "M:4/4"
              "|d2 zd z2 d2|d2 zd zd z2|zd d2 z2 dd|z2 zd zd z2|"
              "|dd zd d2 dd|dd z2 d2 z2|dd z2 d2 zd|d2 zd zd d2|"
+
+             "|Xd dX dd Xd|Xd dX dX dd|dX Xd dd XX|dd dX dX dd|"
+             "|XX dX Xd XX|XX dd Xd dd|XX dd Xd dX|Xd dX dX Xd|")
       [:p "On peut aussi voir cette phrase comme deux listes de durées : "
           (map str l1) " et " (map str l2) ", ce qui va nous aider à "
           "l’orchestrer."]
