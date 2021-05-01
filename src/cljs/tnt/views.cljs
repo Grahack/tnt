@@ -27,7 +27,8 @@
       [:p "A.O. (aka TNT) a partagé une feuille de type « Ago ». "
           "Il était loin de se douter des implications de ce geste. "
           "Cette page pousse le bouchon, tout en ne partant pas en cacahuète."]
-      [:p "Voici la phrase de base (l’originale était notée différemment) :"]
+      [:p "Voici la phrase de base (l’originale était notée avec des noires "
+         "pointées et des liaisons) :"]
       (score "L:1/8" "M:4/4"
              "|B2 zB z2 B2|B2 zB zB z2|zB B2 z2 BB|z2 zB zB z2|"
              "|BB zB B2 BB|BB z2 B2 z2|BB z2 B2 zB|B2 zB zB B2|")
