@@ -108,16 +108,6 @@
              (str "|(6XdXddX (6XddXdX (6XdXddd (6Xddddd"
                   "|(6XdXddd (6XddddX (6XddddX (6ddXXdd|")
 
-             "L:1/16"
-             (str "|(5Xdddd (5dddXd (5ddddd (5Xdddd"
-                  "|(5Xdddd (5dddXd (5dddXd (5ddddd"
-                  "|(5dddXd (5Xdddd (5ddddd (5XddXd"
-                  "|(5ddddd (5dddXd (5dddXd (5ddddd|")
-             (str "|(5XddXd (5dddXd (5Xdddd (5XddXd"
-                  "|(5XddXd (5ddddd (5Xdddd (5ddddd"
-                  "|(5XddXd (5ddddd (5Xdddd (5dddXd"
-                  "|(5Xdddd (5dddXd (5dddXd (5Xdddd|")
-
              "L:1/8" "M:9/8"
               (str "|(3Xdd (3ddd (3ddd|(3ddd (3ddd (3Xdd"
                    "|(3ddd (3ddd (3ddd|(3Xdd (3ddd (3ddd"
@@ -135,6 +125,18 @@
                    "|(3Xdd (3ddd (3ddd|(3ddd (3ddd (3Xdd"
                    "|(3Xdd (3ddd (3ddd|(3ddd (3ddd (3Xdd"
                    "|(3ddd (3ddd (3Xdd|(3Xdd (3ddd (3ddd|")
+
+             "M:4/4"
+
+             "L:1/16"
+             (str "|(5Xdddd (5dddXd (5ddddd (5Xdddd"
+                  "|(5Xdddd (5dddXd (5dddXd (5ddddd"
+                  "|(5dddXd (5Xdddd (5ddddd (5XddXd"
+                  "|(5ddddd (5dddXd (5dddXd (5ddddd|")
+             (str "|(5XddXd (5dddXd (5Xdddd (5XddXd"
+                  "|(5XddXd (5ddddd (5Xdddd (5ddddd"
+                  "|(5XddXd (5ddddd (5Xdddd (5dddXd"
+                  "|(5Xdddd (5dddXd (5dddXd (5Xdddd|")
       )
 
       [:p "On peut aussi voir cette phrase comme deux listes de durées : "
