@@ -117,6 +117,24 @@
                   "|(5XddXd (5ddddd (5Xdddd (5ddddd"
                   "|(5XddXd (5ddddd (5Xdddd (5dddXd"
                   "|(5Xdddd (5dddXd (5dddXd (5Xdddd|")
+
+             "L:1/8" "M:9/8"
+              (str "|(3Xdd (3ddd (3ddd|(3ddd (3ddd (3Xdd"
+                   "|(3ddd (3ddd (3ddd|(3Xdd (3ddd (3ddd"
+                   "|(3Xdd (3ddd (3ddd|(3ddd (3ddd (3Xdd"
+                   "|(3ddd (3ddd (3Xdd|(3ddd (3ddd (3ddd"
+                   "|(3ddd (3ddd (3Xdd|(3Xdd (3ddd (3ddd"
+                   "|(3ddd (3ddd (3ddd|(3Xdd (3ddd (3Xdd"
+                   "|(3ddd (3ddd (3ddd|(3ddd (3ddd (3Xdd"
+                   "|(3ddd (3ddd (3Xdd|(3ddd (3ddd (3ddd|")
+              (str "|(3Xdd (3ddd (3Xdd|(3ddd (3ddd (3Xdd"
+                   "|(3Xdd (3ddd (3ddd|(3Xdd (3ddd (3Xdd"
+                   "|(3Xdd (3ddd (3Xdd|(3ddd (3ddd (3ddd"
+                   "|(3Xdd (3ddd (3ddd|(3ddd (3ddd (3ddd"
+                   "|(3Xdd (3ddd (3Xdd|(3ddd (3ddd (3ddd"
+                   "|(3Xdd (3ddd (3ddd|(3ddd (3ddd (3Xdd"
+                   "|(3Xdd (3ddd (3ddd|(3ddd (3ddd (3Xdd"
+                   "|(3ddd (3ddd (3Xdd|(3Xdd (3ddd (3ddd|")
       )
 
       [:p "On peut aussi voir cette phrase comme deux listes de durées : "
@@ -196,6 +214,10 @@
       ; done
 
       [:h4 "3.3 - Trois groupes de 3"]
+      [:p "On part de la phrase en triolets et on ajoute deux notes "
+          "sur chaque croche."]
+      ; done
+
       [:h3 "5 - Quintolets"]
       ; done
 
