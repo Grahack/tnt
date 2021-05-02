@@ -98,6 +98,12 @@
                   "|(6XdddXd (6dddddd (6Xddddd (6ddddXd"
                   "|(6Xddddd (6ddddXd (6ddddXd (6Xddddd|")
 
+             "L:1/16"
+             (str "|(6XddddX (6dddXdd|(6XddddX (6ddXddd"
+                  "|(6ddXXdd (6dddXdX|(6dddddX (6ddXddd|")
+             (str "|(6XdXddX (6XddXdX|(6XdXddd (6Xddddd"
+                  "|(6XdXddd (6XddddX|(6XddddX (6ddXXdd|")
+
              "L:1/8"
              (str "|(5Xdddd (5dddXd (5ddddd (5Xdddd|(5Xdddd (5dddXd (5dddXd (5ddddd"
                   "|(5dddXd (5Xdddd (5ddddd (5XddXd|(5ddddd (5dddXd (5dddXd (5ddddd|")
@@ -165,6 +171,10 @@
       [:h4 "3.2 - Sextolets, 3 groupes de 2"]
       [:p "Le contre-temps est sur le cinquième sextolet, comme si on mettait "
           "trois notes dans chaque croche de la phrase de départ."]
+      ; done
+
+      [:h4 "3.d - Sextolets, deux fois plus vite"]
+      [:p "On joue « deux fois plus vite »."]
       ; done
 
       [:h4 "3.3 - Trois groupes de 3"]
