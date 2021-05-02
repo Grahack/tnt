@@ -6,8 +6,8 @@
    ))
 
 (defn score [& lines]
-  (let [with-wedges (map #(clojure.string/replace % "X" "!wedge!d") lines)
-        final-lines with-wedges]
+  (let [with-accents (map #(clojure.string/replace % "X" "!accent!d") lines)
+        final-lines with-accents]
     [:> default {:notation (clojure.string/join "\n" final-lines)}]))
 
 (defn main-panel []
