@@ -77,10 +77,14 @@
                   "|(3XzX (3dzd (3Xzd (3dzX|(3Xzd (3dzX (3dzX (3Xzd|")
 
              "L:1/8"
-             (str "|(5Xzzdz (5dzzXz (5dzzdz (5Xzzdz|(5Xzzdz (5dzzXz (5dzzXz (5dzzdz"
-                  "|(5dzzXz (5Xzzdz (5dzzdz (5XzzXz|(5dzzdz (5dzzXz (5dzzXz (5dzzdz|")
-             (str "|(5XzzXz (5dzzXz (5Xzzdz (5XzzXz|(5XzzXz (5dzzdz (5Xzzdz (5dzzdz"
-                  "|(5XzzXz (5dzzdz (5Xzzdz (5dzzXz|(5Xzzdz (5dzzXz (5dzzXz (5Xzzdz|")
+             (str "|(5Xzzdz (5dzzXz (5dzzdz (5Xzzdz"
+                  "|(5Xzzdz (5dzzXz (5dzzXz (5dzzdz"
+                  "|(5dzzXz (5Xzzdz (5dzzdz (5XzzXz"
+                  "|(5dzzdz (5dzzXz (5dzzXz (5dzzdz|")
+             (str "|(5XzzXz (5dzzXz (5Xzzdz (5XzzXz"
+                  "|(5XzzXz (5dzzdz (5Xzzdz (5dzzdz"
+                  "|(5XzzXz (5dzzdz (5Xzzdz (5dzzXz"
+                  "|(5Xzzdz (5dzzXz (5dzzXz (5Xzzdz|")
 
              "L:1/8"
              (str "|(3Xdd (3ddX (3ddd (3Xdd|(3Xdd (3ddX (3ddX (3ddd"
