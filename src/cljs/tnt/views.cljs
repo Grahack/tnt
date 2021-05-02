@@ -232,7 +232,7 @@
       ; done
 
       [:h4 "3.d - Sextolets, deux fois plus vite"]
-      [:p "On joue « deux fois plus vite »."]
+      [:p "On joue « deux fois plus vite » la phrase version triolets."]
       ; done
 
       [:h4 "3.3 - Trois groupes de 3"]
