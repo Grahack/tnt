@@ -204,6 +204,8 @@
       ; done
 
       [:h3 "3 - Triolets"]
+      [:p "On pourrait aussi mettre le contre-temps sur la deuxième "
+          "croche, mais ce n’est pas traité dans ce document."]
       ; done
 
       [:h4 "3.2 - Sextolets, 3 groupes de 2"]
