@@ -117,16 +117,26 @@
 
       [:p "On peut aussi voir cette phrase comme deux listes de durées : "
           (map str l1) " et " (map str l2) ", ce qui va nous aider à "
-          "l’orchestrer."]
+          "trouver des doigtés sur le pad et à l’orchestrer."]
 
-      [:h2 "Mode d’emploi"]
+      [:h2 {:id "mode-d-emploi"} "Mode d’emploi"]
       [:p "On a trois grandes sections : "
-       [:a {:href "#debits"} "« les débits »"]
-       " qui organisent la phrase sur des subdivisions de la pulsation, "
-       [:a {:href "#au-pad"} "« au pad »"]
-       " qui propose des doigtés (droite ou gauche) sur les débits, "
-       [:a {:href "#sur-le-kit"} "« sur le kit »"]
-       " qui propose des orchestrations sur le kit."]
+       [:a {:href "#debits"} "« les débits »"] ", "
+       [:a {:href "#au-pad"} "« au pad »"] ", "
+       [:a {:href "#sur-le-kit"} "« sur le kit »"] "."]
+
+      [:p [:a {:href "#debits"} "Les débits"]
+       " sont des manières abstraites (mais musicales) de réorganiser "
+       "la phrase. Différentes subdivisions sont utilisées et "
+       "les nouvelles phrases sont présentées plutôt dans l’ordre "
+       "de la sections suivante."]
+      [:p "La section " [:a {:href "#au-pad"} "au pad"]
+       " propose des doigtés sur les débits de la section précédente. "
+       "Ils sont pour l’instant pour les droitiers, "
+       "contactez-moi pour les versions pour gaucher."]
+      [:p "Les orchestrations " [:a {:href "#sur-le-kit"} "sur le kit"]
+       " proposent des orchestrations sur le kit de batterie des phrases "
+       "de la section précédente."]
 
       [:h2 {:id "debits"} [:a {:href "#debits"} "Débits"]]
       [:h3 "2 - Croches"]
