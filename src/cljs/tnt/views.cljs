@@ -103,10 +103,10 @@
                   "|(6Xddddd (6ddddXd (6ddddXd (6Xddddd|")
 
              "L:1/16"
-             (str "|(6XddddX (6dddXdd|(6XddddX (6ddXddd"
-                  "|(6ddXXdd (6dddXdX|(6dddddX (6ddXddd|")
-             (str "|(6XdXddX (6XddXdX|(6XdXddd (6Xddddd"
-                  "|(6XdXddd (6XddddX|(6XddddX (6ddXXdd|")
+             (str "|(6XddddX (6dddXdd (6XddddX (6ddXddd"
+                  "|(6ddXXdd (6dddXdX (6dddddX (6ddXddd|")
+             (str "|(6XdXddX (6XddXdX (6XdXddd (6Xddddd"
+                  "|(6XdXddd (6XddddX (6XddddX (6ddXXdd|")
 
              "L:1/16"
              (str "|(5Xdddd (5dddXd (5ddddd (5Xdddd"
