@@ -160,6 +160,8 @@
        " proposent des orchestrations sur le kit de batterie des phrases "
        "de la section précédente."]
 
+      [:p "Dans ce document, les pulsations sont écrites avec des noires."]
+
       [:h2 {:id "debits"} [:a {:href "#debits"} "Débits"]]
       [:h3 "2 - Croches"]
       [:p "Deux notes par pulsation, c’est le débit de la phrase de départ, "
