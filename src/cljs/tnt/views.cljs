@@ -22,24 +22,30 @@
       [:p "Voici la phrase de base (l’originale était notée avec des noires "
          "pointées et des liaisons) :"]
       (score "M:4/4"
+
+             ; phrase de base
              "L:1/8"
              "|d2 zd z2 d2|d2 zd zd z2|zd d2 z2 dd|z2 zd zd z2|"
              "|dd zd d2 dd|dd z2 d2 z2|dd z2 d2 zd|d2 zd zd d2|"
 
+             ; croches
              "L:1/8"
              "|Xd dX dd Xd|Xd dX dX dd|dX Xd dd XX|dd dX dX dd|"
              "|XX dX Xd XX|XX dd Xd dd|XX dd Xd dX|Xd dX dX Xd|"
 
+             ; doubles croches
              "L:1/16"
              (str "|Xddd ddXd dddd Xddd|Xddd ddXd ddXd dddd"
                   "|ddXd Xddd dddd XdXd|dddd ddXd ddXd dddd|")
              (str "|XdXd ddXd Xddd XdXd|XdXd dddd Xddd dddd"
                   "|XdXd dddd Xddd ddXd|Xddd ddXd ddXd Xddd|")
 
+             ; doubles croches deux fois plus vite
              "L:1/16"
              "|XddX ddXd XddX dXdd|dXXd ddXX dddX dXdd|"
              "|XXdX XdXX XXdd Xddd|XXdd XddX XddX dXXd|"
 
+             ; triples croches
              "L:1/32"
              (str "|Xddddddd ddddXddd dddddddd Xddddddd"
                   "|Xddddddd ddddXddd ddddXddd dddddddd|")
@@ -50,16 +56,19 @@
              (str "|XdddXddd dddddddd Xddddddd ddddXddd"
                   "|Xddddddd ddddXddd ddddXddd Xddddddd|")
 
+             ; triples croches deux fois plus vite
              "L:1/32"
               (str "|XdddddXd ddddXddd XdddddXd ddXddddd"
                    "|ddXdXddd ddddXdXd ddddddXd ddXddddd|")
               (str "|XdXdddXd XdddXdXd XdXddddd Xddddddd"
                    "|XdXddddd XdddddXd XdddddXd ddXdXddd|")
              
+             ; triples croches quatre fois plus vite
              "L:1/32"
              (str "|XddXddXd XddXdXdd dXXdddXX dddXdXdd"
                   "|XXdXXdXX XXddXddd XXddXddX XddXdXXd|")
 
+             ; sextolets deux groupes de trois
              "L:1/16"
              (str "|(6Xddddd (6dddXdd (6dddddd (6Xddddd"
                   "|(6Xddddd (6dddXdd (6dddXdd (6dddddd"
@@ -70,12 +79,14 @@
                   "|(6XddXdd (6dddddd (6Xddddd (6dddXdd"
                   "|(6Xddddd (6dddXdd (6dddXdd (6Xddddd|")
 
+             ; swing sur triolets
              "L:1/8"
              (str "|(3Xzd (3dzX (3dzd (3Xzd|(3Xzd (3dzX (3dzX (3dzd"
                   "|(3dzX (3Xzd (3dzd (3XzX|(3dzd (3dzX (3dzX (3dzd|")
              (str "|(3XzX (3dzX (3Xzd (3XzX|(3XzX (3dzd (3Xzd (3dzd"
                   "|(3XzX (3dzd (3Xzd (3dzX|(3Xzd (3dzX (3dzX (3Xzd|")
 
+             ; swing sur quintolets
              "L:1/16"
              (str "|(5Xzzdz (5dzzXz (5dzzdz (5Xzzdz"
                   "|(5Xzzdz (5dzzXz (5dzzXz (5dzzdz"
@@ -86,12 +97,14 @@
                   "|(5XzzXz (5dzzdz (5Xzzdz (5dzzXz"
                   "|(5Xzzdz (5dzzXz (5dzzXz (5Xzzdz|")
 
+             ; triolets
              "L:1/8"
              (str "|(3Xdd (3ddX (3ddd (3Xdd|(3Xdd (3ddX (3ddX (3ddd"
                   "|(3ddX (3Xdd (3ddd (3XdX|(3ddd (3ddX (3ddX (3ddd|")
              (str "|(3XdX (3ddX (3Xdd (3XdX|(3XdX (3ddd (3Xdd (3ddd"
                   "|(3XdX (3ddd (3Xdd (3ddX|(3Xdd (3ddX (3ddX (3Xdd|")
 
+             ; sextolets trois groupes de deux
              "L:1/16"
              (str "|(6Xddddd (6ddddXd (6dddddd (6Xddddd"
                   "|(6Xddddd (6ddddXd (6ddddXd (6dddddd|")
@@ -102,12 +115,14 @@
              (str "|(6XdddXd (6dddddd (6Xddddd (6ddddXd"
                   "|(6Xddddd (6ddddXd (6ddddXd (6Xddddd|")
 
+             ; sextolets deux fois plus vite
              "L:1/16"
              (str "|(6XddddX (6dddXdd (6XddddX (6ddXddd"
                   "|(6ddXXdd (6dddXdX (6dddddX (6ddXddd|")
              (str "|(6XdXddX (6XddXdX (6XdXddd (6Xddddd"
                   "|(6XdXddd (6XddddX (6XddddX (6ddXXdd|")
 
+             ; trois groupes de trois
              "L:1/8" "M:9/8"
               (str "|(3Xdd (3ddd (3ddd|(3ddd (3ddd (3Xdd"
                    "|(3ddd (3ddd (3ddd|(3Xdd (3ddd (3ddd"
@@ -128,6 +143,7 @@
 
              "M:4/4"
 
+             ; quintolets
              "L:1/16"
              (str "|(5Xdddd (5dddXd (5ddddd (5Xdddd"
                   "|(5Xdddd (5dddXd (5dddXd (5ddddd"
