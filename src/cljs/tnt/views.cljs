@@ -153,6 +153,15 @@
                   "|(5XddXd (5ddddd (5Xdddd (5ddddd"
                   "|(5XddXd (5ddddd (5Xdddd (5dddXd"
                   "|(5Xdddd (5dddXd (5dddXd (5Xdddd|")
+
+             ; AU PAD
+
+             ; croches frisé
+             ; croches roulés
+             ; croches flas
+             ; triolets de croches frisé
+             ; triolets de croches roulés
+             ; triolets de croches flas
       )
 
       [:p "On peut aussi voir cette phrase comme deux listes de durées : "
@@ -244,7 +253,17 @@
       ; done
 
       [:h2 {:id "au-pad"}[:a {:href "#au-pad"} "Au pad"]]
-      ; TODO roulés et flas
+      [:h3 "Frisé, roulés et flas"]
+      [:p "Pour chaque débit proposé ci-dessus en croches ou triolets de "
+          "croches (sauf peut-être le « trois groupes de trois »), "
+          "on peut jouer en « frisé » (alternance des mains), "
+          "on peut « rouler » les notes non " "accentuées, "
+          "et on peut jouer des « flas » sur les accents. "
+          [:br]
+          "Voici ces trois versions pour « croches » et « triolets "
+          "de croches »."]
+      ; done
+
       [:h2 {:id "sur-le-kit"}[:a {:href "#sur-le-kit"} "Sur le kit"]]
 
 
