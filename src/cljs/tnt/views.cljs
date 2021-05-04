@@ -86,6 +86,13 @@
              (str "|(3XzX (3dzX (3Xzd (3XzX|(3XzX (3dzd (3Xzd (3dzd"
                   "|(3XzX (3dzd (3Xzd (3dzX|(3Xzd (3dzX (3dzX (3Xzd|")
 
+             ; swing sur doubles croches
+             "L:1/16"
+             (str "|Xzzd dzzX dzzd Xzzd|Xzzd dzzX dzzX dzzd"
+                  "|dzzX Xzzd dzzd XzzX|dzzd dzzX dzzX dzzd|")
+             (str "|XzzX dzzX Xzzd XzzX|XzzX dzzd Xzzd dzzd"
+                  "|XzzX dzzd Xzzd dzzX|Xzzd dzzX dzzX Xzzd|")
+
              ; swing sur quintolets
              "L:1/16"
              (str "|(5Xzzdz (5dzzXz (5dzzdz (5Xzzdz"
@@ -96,6 +103,17 @@
                   "|(5XzzXz (5dzzdz (5Xzzdz (5dzzdz"
                   "|(5XzzXz (5dzzdz (5Xzzdz (5dzzXz"
                   "|(5Xzzdz (5dzzXz (5dzzXz (5Xzzdz|")
+
+             ; swing sur septolets
+             "L:1/16"
+             (str "|(7Xzzzdzz (7dzzzXzz (7dzzzdzz (7Xzzzdzz"
+                  "|(7Xzzzdzz (7dzzzXzz (7dzzzXzz (7dzzzdzz"
+                  "|(7dzzzXzz (7Xzzzdzz (7dzzzdzz (7XzzzXzz"
+                  "|(7dzzzdzz (7dzzzXzz (7dzzzXzz (7dzzzdzz|")
+             (str "|(7XzzzXzz (7dzzzXzz (7Xzzzdzz (7XzzzXzz"
+                  "|(7XzzzXzz (7dzzzdzz (7Xzzzdzz (7dzzzdzz"
+                  "|(7XzzzXzz (7dzzzdzz (7Xzzzdzz (7dzzzXzz"
+                  "|(7Xzzzdzz (7dzzzXzz (7dzzzXzz (7Xzzzdzz|")
 
              ; triolets
              "L:1/8"
@@ -226,8 +244,16 @@
       [:p "Triolets purs dont une note n’est pas jouée."]
       ; done
 
+      [:h4 "2.s4 - Swing sur les doubles croches"]
+      [:p "Doubles croches dont deux notes ne sont pas jouées."]
+      ; done
+
       [:h4 "2.s5 - Swing sur les quintolets"]
       [:p "Quintolets purs dont trois notes ne sont pas jouées."]
+      ; done
+
+      [:h4 "2.s7 - Swing sur les septolets"]
+      [:p "Septolets purs dont cinq notes ne sont pas jouées."]
       ; done
 
       [:h3 "3 - Triolets"]
