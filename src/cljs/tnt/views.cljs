@@ -97,10 +97,12 @@
                   "|(6Xddddd (6dddXdd (6dddXdd (6Xddddd|")
 
              ; swing sur triolets
+             "M:12/8"
              "L:1/8"
              (phrase 4 "d3" "(3::2z2d" "(3dzd" "z3")
 
              ; swing sur doubles croches
+             "M:4/4"
              "L:1/16"
              (phrase 4 "d4" "z3d" "dz2d" "z4")
 
