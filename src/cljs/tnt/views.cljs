@@ -5,10 +5,27 @@
    ["react-sheet-music" :as r-s-m :refer [default]]
    ))
 
-(defn score [& lines]
+(defn score [lines]
   (let [with-accents (map #(clojure.string/replace % "X" "!accent!d") lines)
         final-lines with-accents]
     [:> default {:notation (clojure.string/join "\n" final-lines)}]))
+
+(defn scores [& pieces]
+  (score (flatten pieces)))
+
+(defn space-join [lst]
+  (clojure.string/join " " lst))
+
+(defn pipe-surround [txt]
+  (str "|" txt "|"))
+
+(defn phrase [per-lines d u t r]  ; down up two rest
+  (let [measures [[d u r d] [d u u r] [u d r t] [r u u r]
+                  [t u d t] [t r d r] [t r d u] [d u u d]]]
+    (->> measures (partition per-lines)
+                  (map #(clojure.string/join "|" (map space-join %)))
+                  (map pipe-surround)
+                  (clojure.string/join "\n"))))
 
 (defn main-panel []
   (let [l1 [3 3 2 3 2 4 1 4 1 4 2 3]
@@ -21,12 +38,12 @@
           "Cette page pousse le bouchon, tout en ne partant pas en cacahuète."]
       [:p "Voici la phrase de base (l’originale était notée avec des noires "
          "pointées et des liaisons) :"]
-      (score "M:4/4"
+      (scores
+             "M:4/4"
 
              ; phrase de base
              "L:1/8"
-             "|d2 zd z2 d2|d2 zd zd z2|zd d2 z2 dd|z2 zd zd z2|"
-             "|dd zd d2 dd|dd z2 d2 z2|dd z2 d2 zd|d2 zd zd d2|"
+             (phrase 4 "d2" "zd" "dd" "z2")
 
              ; croches
              "L:1/8"
@@ -81,39 +98,19 @@
 
              ; swing sur triolets
              "L:1/8"
-             (str "|(3Xzd (3dzX (3dzd (3Xzd|(3Xzd (3dzX (3dzX (3dzd"
-                  "|(3dzX (3Xzd (3dzd (3XzX|(3dzd (3dzX (3dzX (3dzd|")
-             (str "|(3XzX (3dzX (3Xzd (3XzX|(3XzX (3dzd (3Xzd (3dzd"
-                  "|(3XzX (3dzd (3Xzd (3dzX|(3Xzd (3dzX (3dzX (3Xzd|")
+             (phrase 4 "d3" "(3::2z2d" "(3dzd" "z3")
 
              ; swing sur doubles croches
              "L:1/16"
-             (str "|Xzzd dzzX dzzd Xzzd|Xzzd dzzX dzzX dzzd"
-                  "|dzzX Xzzd dzzd XzzX|dzzd dzzX dzzX dzzd|")
-             (str "|XzzX dzzX Xzzd XzzX|XzzX dzzd Xzzd dzzd"
-                  "|XzzX dzzd Xzzd dzzX|Xzzd dzzX dzzX Xzzd|")
+             (phrase 4 "d4" "z3d" "dz2d" "z4")
 
              ; swing sur quintolets
              "L:1/16"
-             (str "|(5Xzzdz (5dzzXz (5dzzdz (5Xzzdz"
-                  "|(5Xzzdz (5dzzXz (5dzzXz (5dzzdz"
-                  "|(5dzzXz (5Xzzdz (5dzzdz (5XzzXz"
-                  "|(5dzzdz (5dzzXz (5dzzXz (5dzzdz|")
-             (str "|(5XzzXz (5dzzXz (5Xzzdz (5XzzXz"
-                  "|(5XzzXz (5dzzdz (5Xzzdz (5dzzdz"
-                  "|(5XzzXz (5dzzdz (5Xzzdz (5dzzXz"
-                  "|(5Xzzdz (5dzzXz (5dzzXz (5Xzzdz|")
+             (phrase 4 "d4" "(5::3z3dz" "(5::4dz2dz" "z4")
 
              ; swing sur septolets
-             "L:1/16"
-             (str "|(7Xzzzdzz (7dzzzXzz (7dzzzdzz (7Xzzzdzz"
-                  "|(7Xzzzdzz (7dzzzXzz (7dzzzXzz (7dzzzdzz"
-                  "|(7dzzzXzz (7Xzzzdzz (7dzzzdzz (7XzzzXzz"
-                  "|(7dzzzdzz (7dzzzXzz (7dzzzXzz (7dzzzdzz|")
-             (str "|(7XzzzXzz (7dzzzXzz (7Xzzzdzz (7XzzzXzz"
-                  "|(7XzzzXzz (7dzzzdzz (7Xzzzdzz (7dzzzdzz"
-                  "|(7XzzzXzz (7dzzzdzz (7Xzzzdzz (7dzzzXzz"
-                  "|(7Xzzzdzz (7dzzzXzz (7dzzzXzz (7Xzzzdzz|")
+             "L:1/32"
+             (phrase 2 "d8" "(7::3z4dz2" "(7::4dz3dz2" "z8")
 
              ; triolets
              "L:1/8"
