@@ -183,7 +183,7 @@
 
       [:p "On peut aussi voir cette phrase comme deux listes de durées : "
           (map str l1) " et " (map str l2) ", ce qui va nous aider à "
-          "trouver des doigtés sur le pad et à l’orchestrer."]
+          "trouver des doigtés sur le pad et à l’orchestrer sur le kit."]
 
       [:h2 {:id "mode-d-emploi"} "Mode d’emploi"]
       [:p "On a trois grandes sections : "
