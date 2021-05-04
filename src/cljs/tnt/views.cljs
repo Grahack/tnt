@@ -223,11 +223,11 @@
       ; done
 
       [:h4 "2.s3 - Swing sur les triolets"]
-      [:p "Triolets purs auxquels on enlève une note par temps."]
+      [:p "Triolets purs dont une note n’est pas jouée."]
       ; done
 
       [:h4 "2.s5 - Swing sur les quintolets"]
-      [:p "Quintolets purs auxquels on enlève trois note par temps."]
+      [:p "Quintolets purs dont trois notes ne sont pas jouées."]
       ; done
 
       [:h3 "3 - Triolets"]
