@@ -247,5 +247,13 @@
       ; TODO roulés et flas
       [:h2 {:id "sur-le-kit"}[:a {:href "#sur-le-kit"} "Sur le kit"]]
 
+
+      ; hack pour n’afficher que la phrase de base en prod,
+      ; en attendant react-sheet-music 0.0.5
+      (score "M:4/4"
+             "L:1/8"
+             "|d2 zd z2 d2|d2 zd zd z2|zd d2 z2 dd|z2 zd zd z2|"
+             "|dd zd d2 dd|dd z2 d2 z2|dd z2 d2 zd|d2 zd zd d2|")
+
       [:br] [:br] [:br] [:br] [:br] [:br] [:br] [:br] [:br] [:br] [:br] [:br]
       [:br] [:br] [:br] [:br] [:br] ]))
