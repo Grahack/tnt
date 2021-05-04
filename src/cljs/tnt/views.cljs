@@ -179,6 +179,18 @@
              ; triolets de croches frisé
              ; triolets de croches roulés
              ; triolets de croches flas
+
+             ; bonus : phrase en noires
+             "M:8/4"
+             "L:1/4"
+             (phrase 4 "d2" "zd" "dd" "z2")
+
+             ; noires débit
+             "M:8/4"
+             "L:1/4"
+             "|Xd dX dd Xd|Xd dX dX dd|dX Xd dd XX|dd dX dX dd|"
+             "|XX dX Xd XX|XX dd Xd dd|XX dd Xd dX|Xd dX dX Xd|"
+
       )
 
       [:p "On peut aussi voir cette phrase comme deux listes de durées : "
@@ -291,6 +303,11 @@
 
       [:h2 {:id "sur-le-kit"}[:a {:href "#sur-le-kit"} "Sur le kit"]]
 
+      [:h2 {:id "bonus"}[:a {:href "#bonus"} "Bonus"]]
+      [:p "En bonus, voici la phrase de départ, jouée "
+          " « deux fois plus lentement » par rapport à la pulsation. "
+          "Version « phrase » puis version « débit »."]
+      ; done
 
       ; hack pour n’afficher que la phrase de base en prod,
       ; en attendant react-sheet-music 0.0.5
