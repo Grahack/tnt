@@ -47,15 +47,11 @@
 
              ; croches
              "L:1/8"
-             "|Xd dX dd Xd|Xd dX dX dd|dX Xd dd XX|dd dX dX dd|"
-             "|XX dX Xd XX|XX dd Xd dd|XX dd Xd dX|Xd dX dX Xd|"
+             (phrase 4 "Xd" "dX" "XX" "dd")
 
              ; doubles croches
              "L:1/16"
-             (str "|Xddd ddXd dddd Xddd|Xddd ddXd ddXd dddd"
-                  "|ddXd Xddd dddd XdXd|dddd ddXd ddXd dddd|")
-             (str "|XdXd ddXd Xddd XdXd|XdXd dddd Xddd dddd"
-                  "|XdXd dddd Xddd ddXd|Xddd ddXd ddXd Xddd|")
+             (phrase 4 "Xddd" "ddXd" "XdXd" "dddd")
 
              ; doubles croches deux fois plus vite
              "L:1/16"
@@ -64,14 +60,7 @@
 
              ; triples croches
              "L:1/32"
-             (str "|Xddddddd ddddXddd dddddddd Xddddddd"
-                  "|Xddddddd ddddXddd ddddXddd dddddddd|")
-             (str "|ddddXddd Xddddddd dddddddd XdddXddd"
-                  "|dddddddd ddddXddd ddddXddd dddddddd|")
-             (str "|XdddXddd ddddXddd Xddddddd XdddXddd"
-                  "|XdddXddd dddddddd Xddddddd dddddddd|")
-             (str "|XdddXddd dddddddd Xddddddd ddddXddd"
-                  "|Xddddddd ddddXddd ddddXddd Xddddddd|")
+             (phrase 2 "Xddddddd" "ddddXddd" "XdddXddd" "dddddddd")
 
              ; triples croches deux fois plus vite
              "L:1/32"
@@ -87,14 +76,7 @@
 
              ; sextolets deux groupes de trois
              "L:1/16"
-             (str "|(6Xddddd (6dddXdd (6dddddd (6Xddddd"
-                  "|(6Xddddd (6dddXdd (6dddXdd (6dddddd"
-                  "|(6dddXdd (6Xddddd (6dddddd (6XddXdd"
-                  "|(6dddddd (6dddXdd (6dddXdd (6dddddd|")
-             (str "|(6XddXdd (6dddXdd (6Xddddd (6XddXdd"
-                  "|(6XddXdd (6dddddd (6Xddddd (6dddddd"
-                  "|(6XddXdd (6dddddd (6Xddddd (6dddXdd"
-                  "|(6Xddddd (6dddXdd (6dddXdd (6Xddddd|")
+             (phrase 4 "(6Xddddd" "(6dddXdd" "(6XddXdd" "(6dddddd")
 
              ; swing sur triolets
              "M:12/8"
