@@ -252,12 +252,6 @@
              "L:1/4"
              (phrase 4 "d2" "zd" "dd" "z2"))
 
-      ; hack pour n’afficher que la phrase de base en prod,
-      ; en attendant react-sheet-music 0.0.5
-      (score "M:4/4"
-             "L:1/8"
-             "|d2 zd z2 d2|d2 zd zd z2|zd d2 z2 dd|z2 zd zd z2|"
-             "|dd zd d2 dd|dd z2 d2 z2|dd z2 d2 zd|d2 zd zd d2|")
       (score "noire-débit"
              "M:8/4"
              "L:1/4"
