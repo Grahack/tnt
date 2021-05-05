@@ -5,13 +5,15 @@
    ["@grahack/react-sheet-music-mirror" :as r-s-m :refer [default]]
    ))
 
-(defn score [lines]
-  (let [with-accents (map #(clojure.string/replace % "X" "!accent!d") lines)
+(defn score [id & lines]
+  (let [first-line (first lines)
+        with-meter (if (clojure.string/starts-with? first-line "M:")
+                       lines
+                       (cons "M:4/4" lines))
+        flat (flatten with-meter)
+        with-accents (map #(clojure.string/replace % "X" "!accent!d") flat)
         final-lines with-accents]
-    [:> default {:notation (clojure.string/join "\n" final-lines)}]))
-
-(defn scores [& pieces]
-  (score (flatten pieces)))
+    [:> default {:id id :notation (clojure.string/join "\n" final-lines)}]))
 
 (defn space-join [lst]
   (clojure.string/join " " lst))
@@ -41,142 +43,11 @@
           "Cette page pousse le bouchon, tout en ne partant pas en cacahuète."]
       [:p "Voici la phrase de base (l’originale était notée avec des noires "
          "pointées et des liaisons) :"]
-      (scores
-             "M:4/4"
-
-             ; phrase de base
+      (score "phrase"
              "L:1/8"
-             (phrase 4 "d2" "zd" "dd" "z2")
+             (phrase 4 "d2" "zd" "dd" "z2"))
 
-             ; croches
-             "L:1/8"
-             (phrase 4 "Xd" "dX" "XX" "dd")
 
-             ; doubles croches
-             "L:1/16"
-             (phrase 4 "Xddd" "ddXd" "XdXd" "dddd")
-
-             ; doubles croches deux fois plus vite
-             "L:1/16"
-             "|XddX ddXd XddX dXdd|dXXd ddXX dddX dXdd|"
-             "|XXdX XdXX XXdd Xddd|XXdd XddX XddX dXXd|"
-
-             ; triples croches
-             "L:1/32"
-             (phrase 2 "Xddddddd" "ddddXddd" "XdddXddd" "dddddddd")
-
-             ; triples croches deux fois plus vite
-             "L:1/32"
-              (str "|XdddddXd ddddXddd XdddddXd ddXddddd"
-                   "|ddXdXddd ddddXdXd ddddddXd ddXddddd|")
-              (str "|XdXdddXd XdddXdXd XdXddddd Xddddddd"
-                   "|XdXddddd XdddddXd XdddddXd ddXdXddd|")
-             
-             ; triples croches quatre fois plus vite
-             "L:1/32"
-             (str "|XddXddXd XddXdXdd dXXdddXX dddXdXdd"
-                  "|XXdXXdXX XXddXddd XXddXddX XddXdXXd|")
-
-             ; sextolets deux groupes de trois
-             "L:1/16"
-             (phrase 4 "(6Xddddd" "(6dddXdd" "(6XddXdd" "(6dddddd")
-
-             ; swing sur triolets
-             "M:12/8"
-             "L:1/8"
-             (phrase 4 "d3" "(3::2z2d" "(3dzd" "z3")
-
-             ; swing sur doubles croches
-             "M:4/4"
-             "L:1/16"
-             (phrase 4 "d4" "z3d" "dz2d" "z4")
-
-             ; swing sur quintolets
-             "L:1/16"
-             (phrase 4 "d4" "(5::3z3dz" "(5::4dz2dz" "z4")
-
-             ; swing sur septolets
-             "L:1/32"
-             (phrase 2 "d8" "(7::3z4dz2" "(7::4dz3dz2" "z8")
-
-             ; triolets
-             "L:1/8"
-             (str "|(3Xdd (3ddX (3ddd (3Xdd|(3Xdd (3ddX (3ddX (3ddd"
-                  "|(3ddX (3Xdd (3ddd (3XdX|(3ddd (3ddX (3ddX (3ddd|")
-             (str "|(3XdX (3ddX (3Xdd (3XdX|(3XdX (3ddd (3Xdd (3ddd"
-                  "|(3XdX (3ddd (3Xdd (3ddX|(3Xdd (3ddX (3ddX (3Xdd|")
-
-             ; sextolets trois groupes de deux
-             "L:1/16"
-             (str "|(6Xddddd (6ddddXd (6dddddd (6Xddddd"
-                  "|(6Xddddd (6ddddXd (6ddddXd (6dddddd|")
-             (str "|(6ddddXd (6Xddddd (6dddddd (6XdddXd"
-                  "|(6dddddd (6ddddXd (6ddddXd (6dddddd|")
-             (str "|(6XdddXd (6ddddXd (6Xddddd (6XdddXd"
-                  "|(6XdddXd (6dddddd (6Xddddd (6dddddd|")
-             (str "|(6XdddXd (6dddddd (6Xddddd (6ddddXd"
-                  "|(6Xddddd (6ddddXd (6ddddXd (6Xddddd|")
-
-             ; sextolets deux fois plus vite
-             "L:1/16"
-             (str "|(6XddddX (6dddXdd (6XddddX (6ddXddd"
-                  "|(6ddXXdd (6dddXdX (6dddddX (6ddXddd|")
-             (str "|(6XdXddX (6XddXdX (6XdXddd (6Xddddd"
-                  "|(6XdXddd (6XddddX (6XddddX (6ddXXdd|")
-
-             ; trois groupes de trois
-             "L:1/8" "M:9/8"
-              (str "|(3Xdd (3ddd (3ddd|(3ddd (3ddd (3Xdd"
-                   "|(3ddd (3ddd (3ddd|(3Xdd (3ddd (3ddd"
-                   "|(3Xdd (3ddd (3ddd|(3ddd (3ddd (3Xdd"
-                   "|(3ddd (3ddd (3Xdd|(3ddd (3ddd (3ddd|")
-              (str "|(3ddd (3ddd (3Xdd|(3Xdd (3ddd (3ddd"
-                   "|(3ddd (3ddd (3ddd|(3Xdd (3ddd (3Xdd"
-                   "|(3ddd (3ddd (3ddd|(3ddd (3ddd (3Xdd"
-                   "|(3ddd (3ddd (3Xdd|(3ddd (3ddd (3ddd|")
-              (str "|(3Xdd (3ddd (3Xdd|(3ddd (3ddd (3Xdd"
-                   "|(3Xdd (3ddd (3ddd|(3Xdd (3ddd (3Xdd"
-                   "|(3Xdd (3ddd (3Xdd|(3ddd (3ddd (3ddd"
-                   "|(3Xdd (3ddd (3ddd|(3ddd (3ddd (3ddd|")
-              (str "|(3Xdd (3ddd (3Xdd|(3ddd (3ddd (3ddd"
-                   "|(3Xdd (3ddd (3ddd|(3ddd (3ddd (3Xdd"
-                   "|(3Xdd (3ddd (3ddd|(3ddd (3ddd (3Xdd"
-                   "|(3ddd (3ddd (3Xdd|(3Xdd (3ddd (3ddd|")
-
-             "M:4/4"
-
-             ; quintolets
-             "L:1/16"
-             (str "|(5Xdddd (5dddXd (5ddddd (5Xdddd"
-                  "|(5Xdddd (5dddXd (5dddXd (5ddddd"
-                  "|(5dddXd (5Xdddd (5ddddd (5XddXd"
-                  "|(5ddddd (5dddXd (5dddXd (5ddddd|")
-             (str "|(5XddXd (5dddXd (5Xdddd (5XddXd"
-                  "|(5XddXd (5ddddd (5Xdddd (5ddddd"
-                  "|(5XddXd (5ddddd (5Xdddd (5dddXd"
-                  "|(5Xdddd (5dddXd (5dddXd (5Xdddd|")
-
-             ; AU PAD
-
-             ; croches frisé
-             ; croches roulés
-             ; croches flas
-             ; triolets de croches frisé
-             ; triolets de croches roulés
-             ; triolets de croches flas
-
-             ; bonus : phrase en noires
-             "M:8/4"
-             "L:1/4"
-             (phrase 4 "d2" "zd" "dd" "z2")
-
-             ; noires débit
-             "M:8/4"
-             "L:1/4"
-             "|Xd dX dd Xd|Xd dX dX dd|dX Xd dd XX|dd dX dX dd|"
-             "|XX dX Xd XX|XX dd Xd dd|XX dd Xd dX|Xd dX dX Xd|"
-
-      )
 
       [:p "On peut aussi voir cette phrase comme deux listes de durées : "
           (map str l1) " et " (map str l2) ", ce qui va nous aider à "
@@ -208,71 +79,146 @@
       [:p "Deux notes par pulsation, c’est le débit de la phrase de départ, "
           "que l’on recopie ici en ajoutant des croches non accentuées "
           "dans les silences."]
-      ; done
+      (score "croches"
+             "L:1/8"
+             (phrase 4 "Xd" "dX" "XX" "dd"))
 
       [:h4 "2.2 - Doubles croches"]
       [:p "Quatre notes par pulsation. Soit on ajoute une note sans accent "
           "entre les croches :"]
-      ; done
+      (score "doubles-croches"
+             "L:1/16"
+             (phrase 4 "Xddd" "ddXd" "XdXd" "dddd"))
+
 
       [:p "Soit on joue « deux fois plus vite » par rapport à la pulsation :"]
-      ; done
+      (score "doubles-croches-deux-fois-plus-vite"
+             "L:1/16"
+             "|XddX ddXd XddX dXdd|dXXd ddXX dddX dXdd|"
+             "|XXdX XdXX XXdd Xddd|XXdd XddX XddX dXXd|")
 
       [:h4 "2.4 - Triples croches"]
       [:p "Huit notes par pulsation. Soit on ajoute une note sans accent "
           "entre les doubles croches de chacune des versions ci-dessus :"]
-      ; done
+      (score "triples-croches"
+             "L:1/32"
+             (phrase 2 "Xddddddd" "ddddXddd" "XdddXddd" "dddddddd"))
 
       [:p "ou"]
-      ; done
+      (score "triples-croches-deux-fois-plus-vite"
+             "L:1/32"
+              (str "|XdddddXd ddddXddd XdddddXd ddXddddd"
+                   "|ddXdXddd ddddXdXd ddddddXd ddXddddd|")
+              (str "|XdXdddXd XdddXdXd XdXddddd Xddddddd"
+                   "|XdXddddd XdddddXd XdddddXd ddXdXddd|"))
 
       [:p "Soit on joue « deux fois plus vite »."]
-      ; done
+      (score "triples-croches-quatre-fois-plus-vite"
+             "L:1/32"
+             (str "|XddXddXd XddXdXdd dXXdddXX dddXdXdd"
+                  "|XXdXXdXX XXddXddd XXddXddX XddXdXXd|"))
 
       [:p "On ne va pas plus loin : pas de quadruple croche dans ce document."]
 
       [:h4 "2.3 - Sextolets, 2 groupes de 3"]
       [:p "Le contre-temps est sur le quatrième sextolet, comme si on mettait "
           "trois notes dans chaque croche de la phrase de départ."]
-      ; done
+      (score "sextolets-deux-groupes-de-trois"
+             "L:1/16"
+             (phrase 4 "(6Xddddd" "(6dddXdd" "(6XddXdd" "(6dddddd"))
 
       [:h4 "2.s3 - Swing sur les triolets"]
       [:p "Triolets purs dont une note n’est pas jouée."]
-      ; done
+      (score "swing-sur-triolets"
+             "M:12/8"
+             "L:1/8"
+             (phrase 4 "d3" "(3::2z2d" "(3dzd" "z3"))
 
       [:h4 "2.s4 - Swing sur les doubles croches"]
       [:p "Doubles croches dont deux notes ne sont pas jouées."]
-      ; done
+      (score "swing-sur-double-croches"
+             "L:1/16"
+             (phrase 4 "d4" "z3d" "dz2d" "z4"))
 
       [:h4 "2.s5 - Swing sur les quintolets"]
       [:p "Quintolets purs dont trois notes ne sont pas jouées."]
-      ; done
+      (score "swing-sur-quintolets"
+             "L:1/16"
+             (phrase 4 "d4" "(5::3z3dz" "(5::4dz2dz" "z4"))
 
       [:h4 "2.s7 - Swing sur les septolets"]
       [:p "Septolets purs dont cinq notes ne sont pas jouées."]
-      ; done
+      (score "swing-sur-septolets"
+             "L:1/32"
+             (phrase 4 "d8" "(7::3z4dz2" "(7::4dz3dz2" "z8"))
 
       [:h3 "3 - Triolets"]
       [:p "On pourrait aussi mettre le contre-temps sur la deuxième "
           "croche, mais ce n’est pas traité dans ce document."]
-      ; done
+      (score "triolets"
+             "L:1/8"
+             (str "|(3Xdd (3ddX (3ddd (3Xdd|(3Xdd (3ddX (3ddX (3ddd"
+                  "|(3ddX (3Xdd (3ddd (3XdX|(3ddd (3ddX (3ddX (3ddd|")
+             (str "|(3XdX (3ddX (3Xdd (3XdX|(3XdX (3ddd (3Xdd (3ddd"
+                  "|(3XdX (3ddd (3Xdd (3ddX|(3Xdd (3ddX (3ddX (3Xdd|"))
 
       [:h4 "3.2 - Sextolets, 3 groupes de 2"]
       [:p "Le contre-temps est sur le cinquième sextolet, comme si on mettait "
           "trois notes dans chaque croche de la phrase de départ."]
-      ; done
+      (score "sextolets-trois-groupes-de-deux"
+             "L:1/16"
+             (str "|(6Xddddd (6ddddXd (6dddddd (6Xddddd"
+                  "|(6Xddddd (6ddddXd (6ddddXd (6dddddd|")
+             (str "|(6ddddXd (6Xddddd (6dddddd (6XdddXd"
+                  "|(6dddddd (6ddddXd (6ddddXd (6dddddd|")
+             (str "|(6XdddXd (6ddddXd (6Xddddd (6XdddXd"
+                  "|(6XdddXd (6dddddd (6Xddddd (6dddddd|")
+             (str "|(6XdddXd (6dddddd (6Xddddd (6ddddXd"
+                  "|(6Xddddd (6ddddXd (6ddddXd (6Xddddd|"))
 
       [:h4 "3.d - Sextolets, deux fois plus vite"]
       [:p "On joue « deux fois plus vite » la phrase version triolets."]
-      ; done
+      (score "sextolets-deux-fois-plus-vite"
+             "L:1/16"
+             (str "|(6XddddX (6dddXdd (6XddddX (6ddXddd"
+                  "|(6ddXXdd (6dddXdX (6dddddX (6ddXddd|")
+             (str "|(6XdXddX (6XddXdX (6XdXddd (6Xddddd"
+                  "|(6XdXddd (6XddddX (6XddddX (6ddXXdd|"))
 
       [:h4 "3.3 - Trois groupes de 3"]
       [:p "On part de la phrase en triolets et on ajoute deux notes "
           "sur chaque croche."]
-      ; done
+      (score "trois-groupes-de-trois"
+             "M:9/8"
+             "L:1/8"
+              (str "|(3Xdd (3ddd (3ddd|(3ddd (3ddd (3Xdd"
+                   "|(3ddd (3ddd (3ddd|(3Xdd (3ddd (3ddd|")
+              (str "|(3Xdd (3ddd (3ddd|(3ddd (3ddd (3Xdd"
+                   "|(3ddd (3ddd (3Xdd|(3ddd (3ddd (3ddd|")
+              (str "|(3ddd (3ddd (3Xdd|(3Xdd (3ddd (3ddd"
+                   "|(3ddd (3ddd (3ddd|(3Xdd (3ddd (3Xdd|")
+              (str "|(3ddd (3ddd (3ddd|(3ddd (3ddd (3Xdd"
+                   "|(3ddd (3ddd (3Xdd|(3ddd (3ddd (3ddd|")
+              (str "|(3Xdd (3ddd (3Xdd|(3ddd (3ddd (3Xdd"
+                   "|(3Xdd (3ddd (3ddd|(3Xdd (3ddd (3Xdd|")
+              (str "|(3Xdd (3ddd (3Xdd|(3ddd (3ddd (3ddd"
+                   "|(3Xdd (3ddd (3ddd|(3ddd (3ddd (3ddd|")
+              (str "|(3Xdd (3ddd (3Xdd|(3ddd (3ddd (3ddd"
+                   "|(3Xdd (3ddd (3ddd|(3ddd (3ddd (3Xdd|")
+              (str "|(3Xdd (3ddd (3ddd|(3ddd (3ddd (3Xdd"
+                   "|(3ddd (3ddd (3Xdd|(3Xdd (3ddd (3ddd|"))
 
       [:h3 "5 - Quintolets"]
-      ; done
+      (score "quintolets"
+             "L:1/16"
+             (str "|(5Xdddd (5dddXd (5ddddd (5Xdddd"
+                  "|(5Xdddd (5dddXd (5dddXd (5ddddd|")
+             (str "|(5dddXd (5Xdddd (5ddddd (5XddXd"
+                  "|(5ddddd (5dddXd (5dddXd (5ddddd|")
+             (str "|(5XddXd (5dddXd (5Xdddd (5XddXd"
+                  "|(5XddXd (5ddddd (5Xdddd (5ddddd|")
+             (str "|(5XddXd (5ddddd (5Xdddd (5dddXd"
+                  "|(5Xdddd (5dddXd (5dddXd (5Xdddd|"))
 
       [:h2 {:id "au-pad"}[:a {:href "#au-pad"} "Au pad"]]
       [:h3 "Frisé, roulés et flas"]
@@ -292,7 +238,10 @@
       [:p "En bonus, voici la phrase de départ, jouée "
           " « deux fois plus lentement » par rapport à la pulsation. "
           "Version « phrase » puis version « débit »."]
-      ; done
+      (score "noire-phrase"
+             "M:8/4"
+             "L:1/4"
+             (phrase 4 "d2" "zd" "dd" "z2"))
 
       ; hack pour n’afficher que la phrase de base en prod,
       ; en attendant react-sheet-music 0.0.5
@@ -300,6 +249,11 @@
              "L:1/8"
              "|d2 zd z2 d2|d2 zd zd z2|zd d2 z2 dd|z2 zd zd z2|"
              "|dd zd d2 dd|dd z2 d2 z2|dd z2 d2 zd|d2 zd zd d2|")
+      (score "noire-débit"
+             "M:8/4"
+             "L:1/4"
+             "|Xd dX dd Xd|Xd dX dX dd|dX Xd dd XX|dd dX dX dd|"
+             "|XX dX Xd XX|XX dd Xd dd|XX dd Xd dX|Xd dX dX Xd|")
 
       [:br] [:br] [:br] [:br] [:br] [:br] [:br] [:br] [:br] [:br] [:br] [:br]
       [:br] [:br] [:br] [:br] [:br] ]))
