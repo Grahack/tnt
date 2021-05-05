@@ -112,7 +112,7 @@
               (str "|XdXdddXd XdddXdXd XdXddddd Xddddddd"
                    "|XdXddddd XdddddXd XdddddXd ddXdXddd|"))
 
-      [:p "Soit on joue « deux fois plus vite »."]
+      [:p "Soit on joue « deux fois plus vite » que les doubles-croches."]
       (score "triples-croches-quatre-fois-plus-vite"
              "L:1/32"
              (str "|XddXddXd XddXdXdd dXXdddXX dddXdXdd"
@@ -128,7 +128,8 @@
              (phrase 4 "(6Xddddd" "(6dddXdd" "(6XddXdd" "(6dddddd"))
 
       [:h4 "2.s3 - Swing sur les triolets"]
-      [:p "Triolets purs dont une note n’est pas jouée."]
+      [:p "Triolets purs dont une note n’est pas jouée, "
+          "ici par exemple noté en 12:8."]
       (score "swing-sur-triolets"
              "M:12/8"
              "L:1/8"
@@ -164,7 +165,8 @@
 
       [:h4 "3.2 - Sextolets, 3 groupes de 2"]
       [:p "Le contre-temps est sur le cinquième sextolet, comme si on mettait "
-          "trois notes dans chaque croche de la phrase de départ."]
+          "deux notes dans chaque croche de la phrase interprétée en triolets "
+          "ci-dessus."]
       (score "sextolets-trois-groupes-de-deux"
              "L:1/16"
              (str "|(6Xddddd (6ddddXd (6dddddd (6Xddddd"
