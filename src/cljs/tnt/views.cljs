@@ -147,12 +147,6 @@
              "L:1/16"
              (phrase 4 "d4" "(5::3z3dz" "(5::4dz2dz" "z4"))
 
-      [:h4 "2.s7 - Swing sur les septolets"]
-      [:p "Septolets purs dont cinq notes ne sont pas jouées."]
-      (score "swing-sur-septolets"
-             "L:1/32"
-             (phrase 4 "d8" "(7::3z4dz2" "(7::4dz3dz2" "z8"))
-
       [:h3 "3 - Triolets"]
       [:p "On pourrait aussi mettre le contre-temps sur la deuxième "
           "croche, mais ce n’est pas traité dans ce document."]
