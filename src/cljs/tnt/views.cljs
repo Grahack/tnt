@@ -125,7 +125,7 @@
           "trois notes dans chaque croche de la phrase de départ."]
       (score "sextolets-deux-groupes-de-trois"
              "L:1/16"
-             (phrase 4 "(6Xddddd" "(6dddXdd" "(6XddXdd" "(6dddddd"))
+             (phrase 2 "(6Xddddd" "(6dddXdd" "(6XddXdd" "(6dddddd"))
 
       [:h4 "2.s3 - Swing sur les triolets"]
       [:p "Triolets purs dont une note n’est pas jouée, "
