@@ -31,6 +31,9 @@
   (let [l1 [3 3 2 3 2 4 1 4 1 4 2 3]
         l2 [1 2 1 2 1 1 1 3 4 1 3 3 1 3 2 1 2]]
     [:div
+      [:div {:id "links"}
+       [:a {:href "mailto:christophegragnic@gmail.com"} "Email"] " - "
+       [:a {:href "https://github.com/grahack/tnt" :target "_blank"} "Github"]]
       [:h1 "Exo TNT"]
       [:h2 "Histoire"]
       [:p "A.O. (aka TNT) a partagé une feuille de type « Ago ». "
