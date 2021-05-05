@@ -2,7 +2,7 @@
   (:require
    [re-frame.core :as re-frame]
    [clojure.string]
-   ["react-sheet-music" :as r-s-m :refer [default]]
+   ["@grahack/react-sheet-music-mirror" :as r-s-m :refer [default]]
    ))
 
 (defn score [lines]

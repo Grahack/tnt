@@ -10,7 +10,7 @@
 	"dependencies": {
 		"react": "16.13.0",
 		"react-dom": "16.13.0",
-		"react-sheet-music": "0.0.1"
+		"@grahack/react-sheet-music-mirror": "0.0.5"
 	},
 	"devDependencies": {
 		"shadow-cljs": "2.12.5"
