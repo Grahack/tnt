@@ -232,9 +232,16 @@
           [:br]
           "Voici ces trois versions pour « croches » et « triolets "
           "de croches »."]
-      ; done
+      ; TODO
+             ; croches frisé
+             ; croches roulés
+             ; croches flas
+             ; triolets de croches frisé
+             ; triolets de croches roulés
+             ; triolets de croches flas
 
       [:h2 {:id "sur-le-kit"}[:a {:href "#sur-le-kit"} "Sur le kit"]]
+      [:p "TODO"]
 
       [:h2 {:id "bonus"}[:a {:href "#bonus"} "Bonus"]]
       [:p "En bonus, voici la phrase de départ, jouée "
