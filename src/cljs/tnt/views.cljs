@@ -276,12 +276,12 @@
       [:p "En bonus, voici la phrase de départ, jouée "
           " « deux fois plus lentement » par rapport à la pulsation. "
           "Version « phrase » puis version « débit »."]
-      (score "noire-phrase"
+      (score "noires-phrase"
              "M:8/4"
              "L:1/4"
              (phrase 4 "d2" "zd" "dd" "z2"))
 
-      (score "noire-débit"
+      (score "noires"
              "M:8/4"
              "L:1/4"
              (debit-1 4 "Xd" "dX" "XX" "dd"))
