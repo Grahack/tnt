@@ -120,7 +120,7 @@
           "entre les croches :"]
       (score "doubles-croches"
              "L:1/16"
-             (phrase 4 "Xddd" "ddXd" "XdXd" "dddd"))
+             (phrase 2 "Xddd" "ddXd" "XdXd" "dddd"))
 
 
       [:p "Soit on joue « deux fois plus vite » par rapport à la pulsation :"]
