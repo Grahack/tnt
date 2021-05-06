@@ -75,6 +75,38 @@
       [:p "Dans ce document, les pulsations sont écrites avec des noires."]
 
       [:h2 {:id "debits"} [:a {:href "#debits"} "Débits"]]
+      [:ul
+        [:li "Basés sur la phrase en croches"
+          [:ul
+            [:li [:a {:href "#croches"} "2 - croches"]]
+            [:li [:a {:href "#doubles-croches"} "2.2 - doubles-croches"]]
+            [:li [:a {:href "#doubles-croches-deux-fois-plus-vite"}
+                     "2.2 bis doubles croches deux fois plus vite"]]
+            [:li [:a {:href "#triples-croches"} "2.4 - triples croches"]]
+            [:li [:a {:href "#triples-croches-deux-fois-plus-vite"}
+                     "2.4 bis - triples croches deux fois plus vite"]]
+            [:li [:a {:href "#triples-croches-quatre-fois-plus-vite"}
+                     "2.4 ter - triples croches quatre fois plus vite"]]
+            [:li [:a {:href "#sextolets-deux-groupes-de-trois"}
+                     "2.3 - sextolets deux groupes de trois"]]]]
+        [:li "Basés sur la phrase en triolets"
+          [:ul
+            [:li [:a {:href "#swing-sur-triolets"} "2.s3 - swing sur triolets"]]
+            [:li [:a {:href "#swing-sur-double-croches"}
+                     "2.s4 - swing sur double croches"]]
+            [:li [:a {:href "#swing-sur-quintolets"}
+                     "2.s5 - swing sur quintolets"]]
+            [:li [:a {:href "#triolets"} "3 - triolets"]]
+            [:li [:a {:href "#sextolets-trois-groupes-de-deux"}
+                     "3.2 - sextolets trois groupes de deux"]]
+            [:li [:a {:href "#sextolets-deux-fois-plus-vite"}
+                     "3.d - sextolets deux fois plus vite"]]]]
+        [:li "Divers"
+          [:ul
+            [:li [:a {:href "#trois-groupes-de-trois"}
+                     "3.3 - trois groupes de trois"]]
+            [:li [:a {:href "#quintolets"} "5 - quintolets"]]]]]
+
       [:h3 "2 - Croches"]
       [:p "Deux notes par pulsation, c’est le débit de la phrase de départ, "
           "que l’on recopie ici en ajoutant des croches non accentuées "
