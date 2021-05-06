@@ -148,8 +148,8 @@
       [:p "Soit on joue « deux fois plus vite » que les doubles-croches."]
       (score "triples-croches-quatre-fois-plus-vite"
              "L:1/32"
-             (str "|XddXddXd XddXdXdd dXXdddXX dddXdXdd"
-                  "|XXdXXdXX XXddXddd XXddXddX XddXdXXd|"))
+             "|XddXddXd XddXdXdd dXXdddXX dddXdXdd|"
+             "|XXdXXdXX XXddXddd XXddXddX XddXdXXd|")
 
       [:p "On ne va pas plus loin : pas de quadruple croche dans ce document."]
 
