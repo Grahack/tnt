@@ -229,22 +229,22 @@
              ;           "(3Xdd (3ddd (3dXd|" "(3ddd (3ddd (3ddd|")
              "M:9/8"
              "L:1/8"
-              (str "|(3Xdd (3ddd (3ddd|(3ddd (3ddd (3Xdd"
-                   "|(3ddd (3ddd (3ddd|(3Xdd (3ddd (3ddd|")
-              (str "|(3Xdd (3ddd (3ddd|(3ddd (3ddd (3Xdd"
-                   "|(3ddd (3ddd (3Xdd|(3ddd (3ddd (3ddd|")
-              (str "|(3ddd (3ddd (3Xdd|(3Xdd (3ddd (3ddd"
-                   "|(3ddd (3ddd (3ddd|(3Xdd (3ddd (3Xdd|")
-              (str "|(3ddd (3ddd (3ddd|(3ddd (3ddd (3Xdd"
-                   "|(3ddd (3ddd (3Xdd|(3ddd (3ddd (3ddd|")
-              (str "|(3Xdd (3ddd (3Xdd|(3ddd (3ddd (3Xdd"
-                   "|(3Xdd (3ddd (3ddd|(3Xdd (3ddd (3Xdd|")
-              (str "|(3Xdd (3ddd (3Xdd|(3ddd (3ddd (3ddd"
-                   "|(3Xdd (3ddd (3ddd|(3ddd (3ddd (3ddd|")
-              (str "|(3Xdd (3ddd (3Xdd|(3ddd (3ddd (3ddd"
-                   "|(3Xdd (3ddd (3ddd|(3ddd (3ddd (3Xdd|")
-              (str "|(3Xdd (3ddd (3ddd|(3ddd (3ddd (3Xdd"
-                   "|(3ddd (3ddd (3Xdd|(3Xdd (3ddd (3ddd|"))
+             (str "|(3Xdd (3ddd (3ddd|(3ddd (3ddd (3Xdd"
+                  "|(3ddd (3ddd (3ddd|(3Xdd (3ddd (3ddd|")
+             (str "|(3Xdd (3ddd (3ddd|(3ddd (3ddd (3Xdd"
+                  "|(3ddd (3ddd (3Xdd|(3ddd (3ddd (3ddd|")
+             (str "|(3ddd (3ddd (3Xdd|(3Xdd (3ddd (3ddd"
+                  "|(3ddd (3ddd (3ddd|(3Xdd (3ddd (3Xdd|")
+             (str "|(3ddd (3ddd (3ddd|(3ddd (3ddd (3Xdd"
+                  "|(3ddd (3ddd (3Xdd|(3ddd (3ddd (3ddd|")
+             (str "|(3Xdd (3ddd (3Xdd|(3ddd (3ddd (3Xdd"
+                  "|(3Xdd (3ddd (3ddd|(3Xdd (3ddd (3Xdd|")
+             (str "|(3Xdd (3ddd (3Xdd|(3ddd (3ddd (3ddd"
+                  "|(3Xdd (3ddd (3ddd|(3ddd (3ddd (3ddd|")
+             (str "|(3Xdd (3ddd (3Xdd|(3ddd (3ddd (3ddd"
+                  "|(3Xdd (3ddd (3ddd|(3ddd (3ddd (3Xdd|")
+             (str "|(3Xdd (3ddd (3ddd|(3ddd (3ddd (3Xdd"
+                  "|(3ddd (3ddd (3Xdd|(3Xdd (3ddd (3ddd|"))
 
       [:h3 "5 - Quintolets"]
       (score "quintolets"
