@@ -29,6 +29,19 @@
                   (map pipe-surround)
                   (clojure.string/join "\n"))))
 
+(def debit-1 phrase)
+
+(defn debit-2 [per-lines
+               ; missing: oooo oxox oxxx xoxo xxxo xxxx
+               ooox ooxo ooxx oxoo oxxo
+               xooo xoox xoxx xxoo xxox]
+  (let [measures [[xoox ooxo xoox oxoo] [oxxo ooxx ooox oxoo]
+                  [xxox xoxx xxoo xooo] [xxoo xoox xoox oxxo]]]
+    (->> measures (partition per-lines)
+                  (map #(clojure.string/join "|" (map space-join %)))
+                  (map pipe-surround)
+                  (clojure.string/join "\n"))))
+
 (defn main-panel []
   (let [l1 [3 3 2 3 2 4 1 4 1 4 2 3]
         l2 [1 2 1 2 1 1 1 3 4 1 3 3 1 3 2 1 2]]
@@ -114,36 +127,34 @@
           "dans les silences."]
       (score "croches"
              "L:1/8"
-             (phrase 4 "Xd" "dX" "XX" "dd"))
+             (debit-1 4 "Xd" "dX" "XX" "dd"))
 
       [:h4 "2.2 - Doubles croches"]
       [:p "Quatre notes par pulsation. Soit on ajoute une note sans accent "
           "entre les croches :"]
       (score "doubles-croches"
              "L:1/16"
-             (phrase 2 "Xddd" "ddXd" "XdXd" "dddd"))
+             (debit-1 2 "Xddd" "ddXd" "XdXd" "dddd"))
 
 
       [:p "Soit on joue « deux fois plus vite » par rapport à la pulsation :"]
       (score "doubles-croches-deux-fois-plus-vite"
              "L:1/16"
-             "|XddX ddXd XddX dXdd|dXXd ddXX dddX dXdd|"
-             "|XXdX XdXX XXdd Xddd|XXdd XddX XddX dXXd|")
+             (debit-2 2 "dddX" "ddXd" "ddXX" "dXdd" "dXXd"
+                        "Xddd" "XddX" "XdXX" "XXdd" "XXdX"))
 
       [:h4 "2.4 - Triples croches"]
       [:p "Huit notes par pulsation. Soit on ajoute une note sans accent "
           "entre les doubles croches de chacune des versions ci-dessus :"]
       (score "triples-croches"
              "L:1/32"
-             (phrase 2 "Xddddddd" "ddddXddd" "XdddXddd" "dddddddd"))
+             (debit-1 2 "Xddddddd" "ddddXddd" "XdddXddd" "dddddddd"))
 
       [:p "ou"]
       (score "triples-croches-deux-fois-plus-vite"
              "L:1/32"
-              (str "|XdddddXd ddddXddd XdddddXd ddXddddd"
-                   "|ddXdXddd ddddXdXd ddddddXd ddXddddd|")
-              (str "|XdXdddXd XdddXdXd XdXddddd Xddddddd"
-                   "|XdXddddd XdddddXd XdddddXd ddXdXddd|"))
+             (debit-2 2 "ddddddXd" "ddddXddd" "ddddXdXd" "ddXddddd" "ddXdXddd"
+                        "Xddddddd" "XdddddXd" "XdddXdXd" "XdXddddd" "XdXdddXd"))
 
       [:p "Soit on joue « deux fois plus vite » que les doubles-croches."]
       (score "triples-croches-quatre-fois-plus-vite"
@@ -158,7 +169,7 @@
           "trois notes dans chaque croche de la phrase de départ."]
       (score "sextolets-deux-groupes-de-trois"
              "L:1/16"
-             (phrase 2 "(6Xddddd" "(6dddXdd" "(6XddXdd" "(6dddddd"))
+             (debit-1 2 "(6Xddddd" "(6dddXdd" "(6XddXdd" "(6dddddd"))
 
       [:h4 "2.s3 - Swing sur les triolets"]
 ; TODO: version débit plutôt que phrase
@@ -192,10 +203,7 @@
           ; pourrait être noté en 12:8
       (score "triolets"
              "L:1/8"
-             (str "|(3Xdd (3ddX (3ddd (3Xdd|(3Xdd (3ddX (3ddX (3ddd"
-                  "|(3ddX (3Xdd (3ddd (3XdX|(3ddd (3ddX (3ddX (3ddd|")
-             (str "|(3XdX (3ddX (3Xdd (3XdX|(3XdX (3ddd (3Xdd (3ddd"
-                  "|(3XdX (3ddd (3Xdd (3ddX|(3Xdd (3ddX (3ddX (3Xdd|"))
+             (debit-1 4 "(3Xdd" "(3ddX" "(3XdX" "(3ddd"))
 
       [:h4 "3.2 - Sextolets, 3 groupes de 2"]
       [:p "Le contre-temps est sur le cinquième sextolet, comme si on mettait "
@@ -203,28 +211,22 @@
           "ci-dessus."]
       (score "sextolets-trois-groupes-de-deux"
              "L:1/16"
-             (str "|(6Xddddd (6ddddXd (6dddddd (6Xddddd"
-                  "|(6Xddddd (6ddddXd (6ddddXd (6dddddd|")
-             (str "|(6ddddXd (6Xddddd (6dddddd (6XdddXd"
-                  "|(6dddddd (6ddddXd (6ddddXd (6dddddd|")
-             (str "|(6XdddXd (6ddddXd (6Xddddd (6XdddXd"
-                  "|(6XdddXd (6dddddd (6Xddddd (6dddddd|")
-             (str "|(6XdddXd (6dddddd (6Xddddd (6ddddXd"
-                  "|(6Xddddd (6ddddXd (6ddddXd (6Xddddd|"))
+             (debit-1 2 "(6Xddddd" "(6ddddXd" "(6XdddXd" "(6dddddd"))
 
       [:h4 "3.d - Sextolets, deux fois plus vite"]
       [:p "On joue « deux fois plus vite » la phrase version triolets."]
       (score "sextolets-deux-fois-plus-vite"
              "L:1/16"
-             (str "|(6XddddX (6dddXdd (6XddddX (6ddXddd"
-                  "|(6ddXXdd (6dddXdX (6dddddX (6ddXddd|")
-             (str "|(6XdXddX (6XddXdX (6XdXddd (6Xddddd"
-                  "|(6XdXddd (6XddddX (6XddddX (6ddXXdd|"))
+             (debit-2 2 "(6dddddX" "(6dddXdd" "(6dddXdX" "(6ddXddd" "(6ddXXdd"
+                        "(6Xddddd" "(6XddddX" "(6XddXdX" "(6XdXddd" "(6XdXddX"))
 
       [:h4 "3.3 - Trois groupes de 3"]
       [:p "On part de la phrase en triolets et on ajoute deux notes "
           "sur chaque croche."]
       (score "trois-groupes-de-trois"
+             ; tentative avec debit-1:
+             ;(debit-1 1 "(3Xdd (3ddd (3ddd|" "(3ddd (3ddd (3dXd|"
+             ;           "(3Xdd (3ddd (3dXd|" "(3ddd (3ddd (3ddd|")
              "M:9/8"
              "L:1/8"
               (str "|(3Xdd (3ddd (3ddd|(3ddd (3ddd (3Xdd"
@@ -247,14 +249,7 @@
       [:h3 "5 - Quintolets"]
       (score "quintolets"
              "L:1/16"
-             (str "|(5Xdddd (5dddXd (5ddddd (5Xdddd"
-                  "|(5Xdddd (5dddXd (5dddXd (5ddddd|")
-             (str "|(5dddXd (5Xdddd (5ddddd (5XddXd"
-                  "|(5ddddd (5dddXd (5dddXd (5ddddd|")
-             (str "|(5XddXd (5dddXd (5Xdddd (5XddXd"
-                  "|(5XddXd (5ddddd (5Xdddd (5ddddd|")
-             (str "|(5XddXd (5ddddd (5Xdddd (5dddXd"
-                  "|(5Xdddd (5dddXd (5dddXd (5Xdddd|"))
+             (debit-1 2 "(5Xdddd" "(5dddXd" "(5XddXd" "(5ddddd"))
 
       [:h2 {:id "au-pad"}[:a {:href "#au-pad"} "Au pad"]]
       [:h3 "Frisé, roulés et flas"]
@@ -289,8 +284,7 @@
       (score "noire-débit"
              "M:8/4"
              "L:1/4"
-             "|Xd dX dd Xd|Xd dX dX dd|dX Xd dd XX|dd dX dX dd|"
-             "|XX dX Xd XX|XX dd Xd dd|XX dd Xd dX|Xd dX dX Xd|")
+             (debit-1 4 "Xd" "dX" "XX" "dd"))
 
       [:br] [:br] [:br] [:br] [:br] [:br] [:br] [:br] [:br] [:br] [:br] [:br]
       [:br] [:br] [:br] [:br] [:br] ]))
