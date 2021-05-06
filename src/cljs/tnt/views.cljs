@@ -105,7 +105,8 @@
           [:ul
             [:li [:a {:href "#trois-groupes-de-trois"}
                      "3.3 - trois groupes de trois"]]
-            [:li [:a {:href "#quintolets"} "5 - quintolets"]]]]]
+            [:li [:a {:href "#quintolets"} "5 - quintolets"]
+            [:li [:a {:href "#bonus"} "Bonus : sur les noires"]]]]]]
 
       [:h3 "2 - Croches"]
       [:p "Deux notes par pulsation, c’est le débit de la phrase de départ, "
