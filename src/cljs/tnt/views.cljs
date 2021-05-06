@@ -48,13 +48,13 @@
     [:div
       [:div {:id "links"}
         [:p
-          [:a {:href "mailto:christophegragnic@gmail.com"} "Email"] " - "
-          [:a {:href "https://github.com/grahack/tnt" :target "_blank"}
-              "Github"]]
-        [:p
           [:a {:href "#debits"} "Débits"] " - "
           [:a {:href "#au-pad"} "Pad"] " - "
-          [:a {:href "#sur-le-kit"} "Kit"]]]
+          [:a {:href "#sur-le-kit"} "Kit"]]
+        [:p
+          [:a {:href "mailto:christophegragnic@gmail.com"} "Email"] " - "
+          [:a {:href "https://github.com/grahack/tnt" :target "_blank"}
+              "Github"]]]
       [:h1 "Exo TNT"]
       [:h2 "Histoire"]
       [:p "A.O. (aka TNT) a partagé une feuille de type « Ago ». "
