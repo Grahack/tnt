@@ -161,21 +161,27 @@
              (phrase 2 "(6Xddddd" "(6dddXdd" "(6XddXdd" "(6dddddd"))
 
       [:h4 "2.s3 - Swing sur les triolets"]
+; TODO: version débit plutôt que phrase
       [:p "Triolets purs dont une note n’est pas jouée, "
           "ici par exemple noté en 12:8."]
+          ; TODO: voir triolets plus bas
       (score "swing-sur-triolets"
              "M:12/8"
              "L:1/8"
              (phrase 4 "d3" "(3::2z2d" "(3dzd" "z3"))
 
       [:h4 "2.s4 - Swing sur les doubles croches"]
+; TODO: version débit plutôt que phrase
       [:p "Doubles croches dont deux notes ne sont pas jouées."]
+          ; TODO: voir dbles plus haut
       (score "swing-sur-double-croches"
              "L:1/16"
              (phrase 4 "d4" "z3d" "dz2d" "z4"))
 
       [:h4 "2.s5 - Swing sur les quintolets"]
+; TODO: version débit plutôt que phrase
       [:p "Quintolets purs dont trois notes ne sont pas jouées."]
+          ; TODO: voir quintolets plus bas
       (score "swing-sur-quintolets"
              "L:1/16"
              (phrase 4 "d4" "(5::3z3dz" "(5::4dz2dz" "z4"))
@@ -183,6 +189,7 @@
       [:h3 "3 - Triolets"]
       [:p "On pourrait aussi mettre le contre-temps sur la deuxième "
           "croche, mais ce n’est pas traité dans ce document."]
+          ; pourrait être noté en 12:8
       (score "triolets"
              "L:1/8"
              (str "|(3Xdd (3ddX (3ddd (3Xdd|(3Xdd (3ddX (3ddX (3ddd"
