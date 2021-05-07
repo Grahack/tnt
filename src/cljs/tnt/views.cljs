@@ -111,24 +111,24 @@
             [:li [:a {:href "#triples-croches-quatre-fois-plus-vite"}
                      "2.4 ter - triples croches quatre fois plus vite"]]
             [:li [:a {:href "#sextolets-deux-groupes-de-trois"}
-                     "2.3 - sextolets deux groupes de trois"]]]]
-        [:li "Basés sur la phrase en triolets"
-          [:ul
+                     "2.3 - sextolets deux groupes de trois"]]
             [:li [:a {:href "#swing-sur-triolets"} "2.s3 - swing sur triolets"]]
             [:li [:a {:href "#swing-sur-double-croches"}
                      "2.s4 - swing sur double croches"]]
             [:li [:a {:href "#swing-sur-quintolets"}
-                     "2.s5 - swing sur quintolets"]]
+                     "2.s5 - swing sur quintolets"]]]
+        [:li "Basés sur la phrase en triolets"
+          [:ul
             [:li [:a {:href "#triolets"} "3 - triolets"]]
             [:li [:a {:href "#sextolets-trois-groupes-de-deux"}
                      "3.2 - sextolets trois groupes de deux"]]
             [:li [:a {:href "#sextolets-deux-fois-plus-vite"}
-                     "3.d - sextolets deux fois plus vite"]]]]
+                     "3.d - sextolets deux fois plus vite"]]
+            [:li [:a {:href "#trois-groupes-de-trois"}
+                     "3.3 - trois groupes de trois"]]]]
         [:li "Divers"
           [:ul
-            [:li [:a {:href "#trois-groupes-de-trois"}
-                     "3.3 - trois groupes de trois"]]
-            [:li [:a {:href "#quintolets"} "5 - quintolets"]
+            [:li [:a {:href "#quintolets"} "5 - quintolets"]]
             [:li [:a {:href "#bonus"} "Bonus : sur les noires"]]]]]]
 
       [:h3 "2 - Croches"]
