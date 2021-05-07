@@ -21,26 +21,32 @@
 (defn pipe-surround [txt]
   (str "|" txt "|"))
 
-(defn phrase [per-lines d u t r]  ; down up two rest
-  (let [measures [[d u r d] [d u u r] [u d r t] [r u u r]
-                  [t u d t] [t r d r] [t r d u] [d u u d]]]
-    (->> measures (partition per-lines)
-                  (map #(clojure.string/join "|" (map space-join %)))
-                  (map pipe-surround)
-                  (clojure.string/join "\n"))))
+(defn tnt-8 [[d u t r]]  ; down up two rest
+  [[d u r d] [d u u r] [u d r t] [r u u r]
+   [t u d t] [t r d r] [t r d u] [d u u d]])
+
+(defn tnt-16 [[ooox ooxo ooxx oxoo oxxo
+               xooo xoox xoxx xxoo xxox]]
+               ; missing: oooo oxox oxxx xoxo xxxo xxxx
+  [[xoox ooxo xoox oxoo] [oxxo ooxx ooox oxoo]
+   [xxox xoxx xxoo xooo] [xxoo xoox xoox oxxo]])
+
+(defn tnt [subdivision per-lines elements]
+  (let [measures { :8 (tnt-8 elements)
+                  :16 (tnt-16 elements)}]
+    (->> (subdivision measures)
+         (partition per-lines)
+         (map #(clojure.string/join "|" (map space-join %)))
+         (map pipe-surround)
+         (clojure.string/join "\n"))))
+
+(defn phrase [per-lines & elements]
+  (tnt :8 per-lines elements))
 
 (def debit-1 phrase)
 
-(defn debit-2 [per-lines
-               ; missing: oooo oxox oxxx xoxo xxxo xxxx
-               ooox ooxo ooxx oxoo oxxo
-               xooo xoox xoxx xxoo xxox]
-  (let [measures [[xoox ooxo xoox oxoo] [oxxo ooxx ooox oxoo]
-                  [xxox xoxx xxoo xooo] [xxoo xoox xoox oxxo]]]
-    (->> measures (partition per-lines)
-                  (map #(clojure.string/join "|" (map space-join %)))
-                  (map pipe-surround)
-                  (clojure.string/join "\n"))))
+(defn debit-2 [per-lines & elements]
+  (tnt :16 per-lines elements))
 
 (defn main-panel []
   (let [l1 [3 3 2 3 2 4 1 4 1 4 2 3]
