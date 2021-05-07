@@ -86,9 +86,7 @@
 
       [:p [:a {:href "#debits"} "Les débits"]
        " sont des manières abstraites (mais musicales) de réorganiser "
-       "la phrase. Différentes subdivisions sont utilisées et "
-       "les nouvelles phrases sont présentées plutôt dans l’ordre "
-       "de la sections suivante."]
+       "la phrase sur différentes subdivisions avec des accents."]
       [:p "La section " [:a {:href "#au-pad"} "au pad"]
        " propose des doigtés sur les débits de la section précédente. "
        "Ils sont pour l’instant pour les droitiers, "
