@@ -61,14 +61,16 @@
                               "\""
                               (second %))]
       (->> measure
-           (clojure.string/join "")
-           (map vector (range))
-           (map sticked-notes)
-           (clojure.string/join "")
-           (partition 4)
-           (map #(clojure.string/join "" %))
-           (partition sticking-length)
-           (map #(clojure.string/join "" %))
+           (clojure.string/join "")  ; flatten
+           (map vector (range))      ; add numbers
+           (map sticked-notes)       ; add stickings
+           (clojure.string/join "")  ; was still a list of notes, flatten
+
+           (partition 4)             ; 4 because "S"n (sticking and note)
+           (map #(clojure.string/join "" %))  ; flatten internal lists
+
+           (partition notes-per-quarter)      ; group by quarters
+           (map #(clojure.string/join "" %))  ; flatten internal lists
            ))))
 
 (defn tnt-sticking [subdivision per-lines sticking prefix elements]
