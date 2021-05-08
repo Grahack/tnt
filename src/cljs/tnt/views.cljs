@@ -31,11 +31,13 @@
   [[xoox ooxo xoox oxoo] [oxxo ooxx ooox oxoo]
    [xxox xoxx xxoo xooo] [xxoo xoox xoox oxxo]])
 
+(defn prefix-adder-to-elts [prefix] #(map (fn [s] (str prefix s)) %))
+
 (defn tnt [subdivision per-lines prefix elements]
-  (let [prefixed-elts (map #(str prefix %) elements)
-        measures { :8 (tnt-8  prefixed-elts)
-                  :16 (tnt-16 prefixed-elts)}]
+  (let [measures { :8 (tnt-8  elements)
+                  :16 (tnt-16 elements)}]
     (->> (subdivision measures)
+         (map (prefix-adder-to-elts prefix))
          (partition per-lines)
          (map #(clojure.string/join "|" (map space-join %)))
          (map pipe-surround)
