@@ -308,16 +308,28 @@
           "on peut « rouler » les notes non " "accentuées, "
           "et on peut jouer des « flas » sur les accents. "
           [:br]
-          "On commence par les croches en frisé."]
+          "On commence par les croches et les triolts en frisé."]
       (score "croches-frise"
              "L:1/8"
-             (sticking-1 4 "RL" "" "Xd" "dX" "XX" "dd"))
+             (sticking-1 2 "RL" "" "Xd" "dX" "XX" "dd"))
+      (score "triolets-frise"
+             "L:1/8"
+             (sticking-1 2 "RL" "(3" "Xdd" "ddX" "XdX" "ddd"))
 
       [:h3 "Triolets RLL"]
       [:p "Intéressant ce deuxième coup accentué sur la main faible."]
       (score "triolets-rll"
              "L:1/8"
-             (sticking-1 4 "RLL" "(3" "Xdd" "ddX" "XdX" "ddd"))
+             (sticking-1 2 "RLL" "(3" "Xdd" "ddX" "XdX" "ddd"))
+
+      [:h3 "Triolets RLLRRL"]
+      [:p "Deuxième coup accentué sur la main faible, et premier sur la "
+          "main forte."]
+      (score "triolets-rllrrl"
+             "L:1/8"
+             (sticking-1 2 "RLLRRL" "(3" "Xdd" "ddX" "XdX" "ddd"))
+
+      ; TODO sextolets RLL
 
       [:h2 {:id "sur-le-kit"}[:a {:href "#sur-le-kit"} "Sur le kit"]]
       [:p "TODO"]
