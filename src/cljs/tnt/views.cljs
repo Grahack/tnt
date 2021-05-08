@@ -31,9 +31,10 @@
   [[xoox ooxo xoox oxoo] [oxxo ooxx ooox oxoo]
    [xxox xoxx xxoo xooo] [xxoo xoox xoox oxxo]])
 
-(defn tnt [subdivision per-lines elements]
-  (let [measures { :8 (tnt-8 elements)
-                  :16 (tnt-16 elements)}]
+(defn tnt [subdivision per-lines prefix elements]
+  (let [prefixed-elts (map #(str prefix %) elements)
+        measures { :8 (tnt-8  prefixed-elts)
+                  :16 (tnt-16 prefixed-elts)}]
     (->> (subdivision measures)
          (partition per-lines)
          (map #(clojure.string/join "|" (map space-join %)))
@@ -41,12 +42,15 @@
          (clojure.string/join "\n"))))
 
 (defn phrase [per-lines & elements]
-  (tnt :8 per-lines elements))
+  (tnt :8 per-lines "" elements))
 
-(def debit-1 phrase)
+(defn debit-1 [per-lines prefix & elements]
+  (tnt :8 per-lines prefix elements))
 
-(defn debit-2 [per-lines & elements]
-  (tnt :16 per-lines elements))
+(defn debit-2 [per-lines prefix & elements]
+  (tnt :16 per-lines prefix elements))
+
+
 
 (defn main-panel []
   (let [l1 [3 3 2 3 2 4 1 4 1 4 2 3]
@@ -137,34 +141,35 @@
           "dans les silences."]
       (score "croches"
              "L:1/8"
-             (debit-1 4 "Xd" "dX" "XX" "dd"))
+             (debit-1 4 "" "Xd" "dX" "XX" "dd"))
 
       [:h4 "2.2 - Doubles croches"]
       [:p "Quatre notes par pulsation. Soit on ajoute une note sans accent "
           "entre les croches :"]
       (score "doubles-croches"
              "L:1/16"
-             (debit-1 2 "Xddd" "ddXd" "XdXd" "dddd"))
+             (debit-1 2 "" "Xddd" "ddXd" "XdXd" "dddd"))
 
 
       [:p "Soit on joue « deux fois plus vite » par rapport à la pulsation :"]
       (score "doubles-croches-deux-fois-plus-vite"
              "L:1/16"
-             (debit-2 2 "dddX" "ddXd" "ddXX" "dXdd" "dXXd"
-                        "Xddd" "XddX" "XdXX" "XXdd" "XXdX"))
+             (debit-2 2 "" "dddX" "ddXd" "ddXX" "dXdd" "dXXd"
+                           "Xddd" "XddX" "XdXX" "XXdd" "XXdX"))
 
       [:h4 "2.4 - Triples croches"]
       [:p "Huit notes par pulsation. Soit on ajoute une note sans accent "
           "entre les doubles croches de chacune des versions ci-dessus :"]
       (score "triples-croches"
              "L:1/32"
-             (debit-1 2 "Xddddddd" "ddddXddd" "XdddXddd" "dddddddd"))
+             (debit-1 2 "" "Xddddddd" "ddddXddd" "XdddXddd" "dddddddd"))
 
       [:p "ou"]
       (score "triples-croches-deux-fois-plus-vite"
              "L:1/32"
-             (debit-2 2 "ddddddXd" "ddddXddd" "ddddXdXd" "ddXddddd" "ddXdXddd"
-                        "Xddddddd" "XdddddXd" "XdddXdXd" "XdXddddd" "XdXdddXd"))
+             (debit-2 2 ""
+                      "ddddddXd" "ddddXddd" "ddddXdXd" "ddXddddd" "ddXdXddd"
+                      "Xddddddd" "XdddddXd" "XdddXdXd" "XdXddddd" "XdXdddXd"))
 
       [:p "Soit on joue « deux fois plus vite » que les doubles-croches."]
       (score "triples-croches-quatre-fois-plus-vite"
@@ -179,7 +184,7 @@
           "trois notes dans chaque croche de la phrase de départ."]
       (score "sextolets-deux-groupes-de-trois"
              "L:1/16"
-             (debit-1 2 "(6Xddddd" "(6dddXdd" "(6XddXdd" "(6dddddd"))
+             (debit-1 2 "(6" "Xddddd" "dddXdd" "XddXdd" "dddddd"))
 
       [:h4 "2.s3 - Swing sur les triolets"]
 ; TODO: version débit plutôt que phrase
@@ -213,7 +218,7 @@
           ; pourrait être noté en 12:8
       (score "triolets"
              "L:1/8"
-             (debit-1 4 "(3Xdd" "(3ddX" "(3XdX" "(3ddd"))
+             (debit-1 4 "(3" "Xdd" "ddX" "XdX" "ddd"))
 
       [:h4 "3.2 - Sextolets, 3 groupes de 2"]
       [:p "Le contre-temps est sur le cinquième sextolet, comme si on mettait "
@@ -221,14 +226,15 @@
           "ci-dessus."]
       (score "sextolets-trois-groupes-de-deux"
              "L:1/16"
-             (debit-1 2 "(6Xddddd" "(6ddddXd" "(6XdddXd" "(6dddddd"))
+             (debit-1 2 "(6" "Xddddd" "ddddXd" "XdddXd" "dddddd"))
 
       [:h4 "3.d - Sextolets, deux fois plus vite"]
       [:p "On joue « deux fois plus vite » la phrase version triolets."]
       (score "sextolets-deux-fois-plus-vite"
              "L:1/16"
-             (debit-2 2 "(6dddddX" "(6dddXdd" "(6dddXdX" "(6ddXddd" "(6ddXXdd"
-                        "(6Xddddd" "(6XddddX" "(6XddXdX" "(6XdXddd" "(6XdXddX"))
+             (debit-2 2 "(6"
+                      "dddddx" "dddxdd" "dddxdx" "ddxddd" "ddxxdd"
+                      "Xddddd" "XddddX" "XddXdX" "XdXddd" "XdXddX"))
 
       [:h4 "3.3 - Trois groupes de 3"]
       [:p "On part de la phrase en triolets et on ajoute deux notes "
@@ -256,7 +262,7 @@
       [:h3 "5 - Quintolets"]
       (score "quintolets"
              "L:1/16"
-             (debit-1 2 "(5Xdddd" "(5dddXd" "(5XddXd" "(5ddddd"))
+             (debit-1 2 "(5" "Xdddd" "dddXd" "XddXd" "ddddd"))
 
       [:h2 {:id "au-pad"}[:a {:href "#au-pad"} "Au pad"]]
       [:h3 "Frisé, roulés et flas"]
