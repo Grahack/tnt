@@ -191,7 +191,8 @@
       [:h4 "2.s3 - Swing sur les triolets"]
 ; TODO: version débit plutôt que phrase
       [:p "Triolets purs dont une note n’est pas jouée, "
-          "ici par exemple noté en 12:8."]
+          "ici par exemple noté en 12:8 (on a groupé les triolets même si "
+          "ce n’était pas nécessaire, voire impropre)."]
           ; TODO: voir triolets plus bas
       (score "swing-sur-triolets"
              "M:12/8"
