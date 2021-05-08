@@ -52,7 +52,38 @@
 (defn debit-2 [per-lines prefix & elements]
   (tnt :16 per-lines prefix elements))
 
+(defn sticking-adder-to-elts [sticking]
+  (fn [measure]
+    (let [notes-per-quarter (count (first measure))
+          sticking-length (count sticking)
+          sticked-notes #(str "\""
+                              (get sticking (mod (first %) sticking-length))
+                              "\""
+                              (second %))]
+      (->> measure
+           (clojure.string/join "")
+           (map vector (range))
+           (map sticked-notes)
+           (clojure.string/join "")
+           (partition 4)
+           (map #(clojure.string/join "" %))
+           (partition sticking-length)
+           (map #(clojure.string/join "" %))
+           ))))
 
+(defn tnt-sticking [subdivision per-lines sticking prefix elements]
+  (let [measures { :8 (tnt-8 elements)
+                  :16 (tnt-16 elements)}]
+    (->> (subdivision measures)
+         (map (sticking-adder-to-elts sticking))
+         (map (prefix-adder-to-elts prefix))
+         (partition per-lines)
+         (map #(clojure.string/join "|" (map space-join %)))
+         (map pipe-surround)
+         (clojure.string/join "\n"))))
+
+(defn sticking-1 [per-lines sticking prefix & elements]
+    (tnt-sticking :8 per-lines sticking prefix elements))
 
 (defn main-panel []
   (let [l1 [3 3 2 3 2 4 1 4 1 4 2 3]
@@ -275,15 +306,16 @@
           "on peut « rouler » les notes non " "accentuées, "
           "et on peut jouer des « flas » sur les accents. "
           [:br]
-          "Voici ces trois versions pour « croches » et « triolets "
-          "de croches »."]
-      ; TODO
-             ; croches frisé
-             ; croches roulés
-             ; croches flas
-             ; triolets de croches frisé
-             ; triolets de croches roulés
-             ; triolets de croches flas
+          "On commence par les croches en frisé."]
+      (score "croches-frise"
+             "L:1/8"
+             (sticking-1 4 "RL" "" "Xd" "dX" "XX" "dd"))
+
+      [:h3 "Triolets RLL"]
+      [:p "Intéressant ce deuxième coup accentué sur la main faible."]
+      (score "triolets-rll"
+             "L:1/8"
+             (sticking-1 4 "RLL" "(3" "Xdd" "ddX" "XdX" "ddd"))
 
       [:h2 {:id "sur-le-kit"}[:a {:href "#sur-le-kit"} "Sur le kit"]]
       [:p "TODO"]
