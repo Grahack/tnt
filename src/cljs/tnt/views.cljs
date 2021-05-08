@@ -234,9 +234,6 @@
       [:p "On part de la phrase en triolets et on ajoute deux notes "
           "sur chaque croche."]
       (score "trois-groupes-de-trois"
-             ; tentative avec debit-1:
-             ;(debit-1 1 "(3Xdd (3ddd (3ddd|" "(3ddd (3ddd (3dXd|"
-             ;           "(3Xdd (3ddd (3dXd|" "(3ddd (3ddd (3ddd|")
              "M:9/8"
              "L:1/8"
              (str "|(3Xdd (3ddd (3ddd|(3ddd (3ddd (3Xdd"
