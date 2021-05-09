@@ -92,6 +92,9 @@
 (defn sticking-1 [per-lines sticking prefix & elements]
     (tnt-sticking :8 per-lines sticking prefix elements))
 
+(defn sticking-2 [per-lines sticking prefix & elements]
+    (tnt-sticking :16 per-lines sticking prefix elements))
+
 (defn main-panel []
   (let [l1 [3 3 2   3 2 4   1 4 1 4 2 3]
         l2 [1 2 1 2 1 1    1 3 4    1 3 3 1   3 2 1 2]
@@ -352,20 +355,67 @@
              "L:1/8"
              (sticking-1 2 "RL" "(3" "Ydd" "ddY" "YdY" "ddd"))
 
-      [:h3 "Triolets RLL"]
+      [:h3 "Triolets et sextolets en RLL"]
+      [:h4 "Triolets en RLL"]
       [:p "Intéressant ce deuxième coup accentué sur la main faible."]
       (score "triolets-rll"
              "L:1/8"
              (sticking-1 2 "RLL" "(3" "Xdd" "ddX" "XdX" "ddd"))
+      [:h4 "Sextolets deux groupes de trois en RLL"]
+      (score "sextolets-deux-groupes-de-trois-rll"
+             "L:1/16"
+             (sticking-1 2 "RLL" "(6" "Xddddd" "dddXdd" "XddXdd" "dddddd"))
+      [:p "C’est tout. Les sextolets trois groupes de deux n’ont que peu "
+          "de sens en RLL."]
+      [:h4 "Sextolets deux fois plus vite en RLL"]
+      [:p "Donc même doigtés que triolets en RLL"]
+      (score "sextolets-deux-fois-plus-vite-rll"
+             "L:1/16"
+             (sticking-2 2 "RLL" "(6"
+                      "dddddX" "dddXdd" "dddXdX" "ddXddd" "ddXXdd"
+                      "Xddddd" "XddddX" "XddXdX" "XdXddd" "XdXddX"))
 
-      [:h3 "Triolets RLLRRL"]
+      [:h3 "Triolets et sextolets RLLRRL"]
+      [:h4 "Triolets en RLLRRL"]
       [:p "Deuxième coup accentué sur la main faible, et premier sur la "
           "main forte."]
       (score "triolets-rllrrl"
              "L:1/8"
              (sticking-1 2 "RLLRRL" "(3" "Xdd" "ddX" "XdX" "ddd"))
+      [:h4 "Sextolets deux groupes de 3 en RLLRRL"]
+      (score "sextolets-deux-groupes-de-trois-rllrrl"
+             "L:1/16"
+             (sticking-1 2 "RLLRRL" "(6" "Xddddd" "dddXdd" "XddXdd" "dddddd"))
+      [:p "C’est tout. Les sextolets trois groupes de deux n’ont que peu "
+          "de sens en RLL."]
+      [:h4 "Sextolets deux fois plus vite en RLLRRL"]
+      [:p "Donc même doigtés que triolets en RLLRRL"]
+      (score "sextolets-deux-fois-plus-vite-rllrrl"
+             "L:1/16"
+             (sticking-2 2 "RLLRRL" "(6"
+                      "dddddX" "dddXdd" "dddXdX" "ddXddd" "ddXXdd"
+                      "Xddddd" "XddddX" "XddXdX" "XdXddd" "XdXddX"))
 
-      ; TODO sextolets RLL
+      [:h3 "Triolets et sextolets RRLRLL"]
+      [:h4 "Triolets en RRLRLL"]
+      [:p "Deuxième coup accentué sur la main faible, et premier sur la "
+          "main forte."]
+      (score "triolets-rrlrll"
+             "L:1/8"
+             (sticking-1 2 "RRLRLL" "(3" "Xdd" "ddX" "XdX" "ddd"))
+      [:h4 "Sextolets deux groupes de 3 en RRLRLL"]
+      (score "sextolets-deux-groupes-de-trois-rrlrll"
+             "L:1/16"
+             (sticking-1 2 "RRLRLL" "(6" "Xddddd" "dddXdd" "XddXdd" "dddddd"))
+      [:p "C’est tout. Les sextolets trois groupes de deux n’ont que peu "
+          "de sens en RLL."]
+      [:h4 "Sextolets deux fois plus vite en RRLRLL"]
+      [:p "Donc même doigtés que triolets en RRLRLL"]
+      (score "sextolets-deux-fois-plus-vite-rrlrll"
+             "L:1/16"
+             (sticking-2 2 "RRLRLL" "(6"
+                      "dddddX" "dddXdd" "dddXdX" "ddXddd" "ddXXdd"
+                      "Xddddd" "XddddX" "XddXdX" "XdXddd" "XdXddX"))
 
       [:h2 {:id "sur-le-kit"}[:a {:href "#sur-le-kit"} "Sur le kit"]]
       [:p "TODO"]
