@@ -195,7 +195,6 @@
              "L:1/16"
              (debit-1 2 "" "Xddd" "ddXd" "XdXd" "dddd"))
 
-
       [:p "Soit on joue « deux fois plus vite » par rapport à la pulsation :"]
       (score "doubles-croches-deux-fois-plus-vite"
              "L:1/16"
