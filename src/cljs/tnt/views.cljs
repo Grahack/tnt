@@ -94,7 +94,9 @@
 
 (defn main-panel []
   (let [l1 [3 3 2 3 2 4 1 4 1 4 2 3]
-        l2 [1 2 1 2 1 1 1 3 4 1 3 3 1 3 2 1 2]]
+        l2 [1 2 1 2 1 1 1 3 4 1 3 3 1 3 2 1 2]
+        l1-3 [5 4 3   5 3 6   1 6 2 6 3 4]
+        l2-3 [2 3 1 3 2 1   4 6   2 4 5 1   5 3 1 3]]
     [:div
       [:div {:id "links"}
         [:p
@@ -260,6 +262,9 @@
       (score "triolets"
              "L:1/8"
              (debit-1 4 "(3" "Xdd" "ddX" "XdX" "ddd"))
+      [:p {:id "triolets-durees"}
+          "Liste des durées triolets : "
+          (map str l1-3) " et " (map str l2-3) "."]
 
       [:h4 "3.2 - Sextolets, 3 groupes de 2"]
       [:p "Le contre-temps est sur le cinquième sextolet, comme si on mettait "
