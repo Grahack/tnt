@@ -311,6 +311,21 @@
              (debit-1 2 "(5" "Xdddd" "dddXd" "XddXd" "ddddd"))
 
       [:h2 {:id "au-pad"}[:a {:href "#au-pad"} "Au pad"]]
+      [:ul
+        [:li "Frisés, roulés et flas"
+          [:ul
+            [:li [:a {:href "#croches-frise"} "Croches"]]
+            [:li [:a {:href "#triolets-frise"} "Triolets"]]]]
+        [:li "Ternaires"
+          [:ul
+            [:li [:a {:href "#rll"} "RLL"]]
+            [:li [:a {:href "#rllrrl"} "RLLRRL"]]
+            [:li [:a {:href "#rrlrll"} "RRLRLL"]]]]
+        [:li "Moulins variables"
+          [:ul
+            [:li [:a {:href "#doubles-croches-diddles"} "Doubles croches"]]
+            [:li [:a {:href "#sextolets-diddles"} "Sextolets"]]]]]
+
       [:h3 "Frisé, roulés et flas"]
       [:p "Pour chaque débit proposé ci-dessus en croches ou triolets de "
           "croches (sauf peut-être le « trois groupes de trois »), "
@@ -320,8 +335,8 @@
           "La feuille initiatrice de ce document proposait seulement de le "
           "faire sur la phrase en croche, puis laissait la phrase en triolets "
           "en frisé. Ici on ajoute roulés et flas sur la phrase en triolet."]
-      [:h4 "Croches en frisé"]
-      (score "croches-frise"
+      [:h4 {:id "croches-frise"} "Croches en frisé"]
+      (score "croches-frise-score"
              "L:1/8"
              (sticking-1 2 "RL" "" "Xd" "dX" "XX" "dd"))
       [:h4 "Croches et roulés"]
@@ -338,8 +353,8 @@
       (score "croches-flas"
              "L:1/8"
              (sticking-1 2 "RL" "" "Yd" "dY" "YY" "dd"))
-      [:h4 "Triolets en frisé"]
-      (score "triolets-frise"
+      [:h4 {:id "triolets-frise"} "Triolets en frisé"]
+      (score "triolets-frise-score"
              "L:1/8"
              (sticking-1 2 "RL" "(3" "Xdd" "ddX" "XdX" "ddd"))
       [:h4 "Triolets et roulés"]
@@ -355,7 +370,7 @@
              "L:1/8"
              (sticking-1 2 "RL" "(3" "Ydd" "ddY" "YdY" "ddd"))
 
-      [:h3 "Triolets et sextolets en RLL"]
+      [:h3 {:id "rll"} "Triolets et sextolets en RLL"]
       [:h4 "Triolets en RLL"]
       [:p "Intéressant ce deuxième coup accentué sur la main faible."]
       (score "triolets-rll"
@@ -375,7 +390,7 @@
                       "dddddX" "dddXdd" "dddXdX" "ddXddd" "ddXXdd"
                       "Xddddd" "XddddX" "XddXdX" "XdXddd" "XdXddX"))
 
-      [:h3 "Triolets et sextolets RLLRRL"]
+      [:h3 {:id "rllrrl"} "Triolets et sextolets RLLRRL"]
       [:h4 "Triolets en RLLRRL"]
       [:p "Deuxième coup accentué sur la main faible, et premier sur la "
           "main forte."]
@@ -396,7 +411,7 @@
                       "dddddX" "dddXdd" "dddXdX" "ddXddd" "ddXXdd"
                       "Xddddd" "XddddX" "XddXdX" "XdXddd" "XdXddX"))
 
-      [:h3 "Triolets et sextolets RRLRLL"]
+      [:h3 {:id "rrlrll"} "Triolets et sextolets RRLRLL"]
       [:h4 "Triolets en RRLRLL"]
       [:p "Deuxième coup accentué sur la main faible, et premier sur la "
           "main forte."]
@@ -435,15 +450,15 @@
                   "|\"L\"!accent!d\"R\"d\"L\"d\"L\"d"
                   "|\"L\"!accent!d\"R\"d\"L\"d\"L\"d\"R\"d\"R\"d"
                   "|\"L\"!accent!d\"R\"d\"L\"d\"L\"d\"R\"d\"R\"d\"L\"d\"L\"d|"))
-      [:h4 "Doubles croches à moulins variables"]
+      [:h4 {:id "doubles-croches-diddles"} "Doubles croches à moulins variables"]
       [:p "Le son est celui des croches auxquelles on a ajouté une double "
           "croche sans accent."]
-      (score "doubles-croches-diddles"
+      (score "doubles-croches-diddles-score"
              "L:1/16"
              (debit-1 2 "" "Xddd" "ddXd" "XdXd" "dddd"))
-      [:h4 "Sextolets à moulins variables"]
+      [:h4 {:id "sextolets-diddles"} "Sextolets à moulins variables"]
       [:p "Le son est celui des sextolets à trois groupes de deux."]
-      (score "sextolets-diddles"
+      (score "sextolets-diddles-score"
              "L:1/16"
              (debit-1 2 "(6" "Xddddd" "ddddXd" "XdddXd" "dddddd"))
 
