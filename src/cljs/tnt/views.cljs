@@ -328,6 +328,11 @@
       (score "croches-rolls"
              "L:1/8"
              (sticking-1 2 "RL" "" "XZ" "ZX" "XX" "ZZ"))
+      [:p "C’est par exemple ici que la liste des durées prend tout son sens."]
+      (score "croches-rolls-explanation"
+             "L:1/16"
+             (str "|\"durée de 1\"d2|d2\"durée de 2\"dd"
+                  "|d2\"durée de 3\"dddd|d2\"durée de 4\"dddddd|"))
       [:h4 "Croches et flas"]
       (score "croches-flas"
              "L:1/8"
