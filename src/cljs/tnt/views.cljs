@@ -15,7 +15,9 @@
                           flat)
         with-flams   (map #(clojure.string/replace % "Y" "{c}!accent!d")
                           with-accents)
-        final-lines with-flams]
+        with-rolls   (map #(clojure.string/replace % "Z" "d/2d/2")
+                          with-flams)
+        final-lines with-rolls]
     [:> default {:id id :notation (clojure.string/join "\n" final-lines)}]))
 
 (defn space-join [lst]
@@ -311,16 +313,23 @@
           "on peut « rouler » les notes non " "accentuées, "
           "et on peut jouer des « flas » sur les accents. "
           [:br]
-          "On commence par les croches et les triolts en frisé."]
+          "Voici ces trois versions pour « croches » et « triolets "
+          "de croches »."]
       (score "croches-frise"
              "L:1/8"
              (sticking-1 2 "RL" "" "Xd" "dX" "XX" "dd"))
+      (score "croches-rolls"
+             "L:1/8"
+             (sticking-1 2 "RL" "" "XZ" "ZX" "XX" "ZZ"))
       (score "croches-flas"
              "L:1/8"
              (sticking-1 2 "RL" "" "Yd" "dY" "YY" "dd"))
       (score "triolets-frise"
              "L:1/8"
              (sticking-1 2 "RL" "(3" "Xdd" "ddX" "XdX" "ddd"))
+      (score "triolets-rolls"
+             "L:1/8"
+             (sticking-1 2 "RL" "(3" "XZZ" "ZZX" "XZX" "ZZZ"))
       (score "triolets-flas"
              "L:1/8"
              (sticking-1 2 "RL" "(3" "Ydd" "ddY" "YdY" "ddd"))
