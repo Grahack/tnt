@@ -312,24 +312,30 @@
           "on peut jouer en « frisé » (alternance des mains), "
           "on peut « rouler » les notes non " "accentuées, "
           "et on peut jouer des « flas » sur les accents. "
-          [:br]
-          "Voici ces trois versions pour « croches » et « triolets "
-          "de croches »."]
+          "La feuille initiatrice de ce document proposait seulement de le "
+          "faire sur la phrase en croche, puis laissait la phrase en triolets "
+          "en frisé. Ici on ajoute roulés et flas sur la phrase en triolet."]
+      [:h4 "Croches en frisé"]
       (score "croches-frise"
              "L:1/8"
              (sticking-1 2 "RL" "" "Xd" "dX" "XX" "dd"))
+      [:h4 "Croches et roulés"]
       (score "croches-rolls"
              "L:1/8"
              (sticking-1 2 "RL" "" "XZ" "ZX" "XX" "ZZ"))
+      [:h4 "Croches et flas"]
       (score "croches-flas"
              "L:1/8"
              (sticking-1 2 "RL" "" "Yd" "dY" "YY" "dd"))
+      [:h4 "Triolets en frisé"]
       (score "triolets-frise"
              "L:1/8"
              (sticking-1 2 "RL" "(3" "Xdd" "ddX" "XdX" "ddd"))
+      [:h4 "Triolets et roulés"]
       (score "triolets-rolls"
              "L:1/8"
              (sticking-1 2 "RL" "(3" "XZZ" "ZZX" "XZX" "ZZZ"))
+      [:h4 "Triolets et flas"]
       (score "triolets-flas"
              "L:1/8"
              (sticking-1 2 "RL" "(3" "Ydd" "ddY" "YdY" "ddd"))
