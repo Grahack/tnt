@@ -335,6 +335,7 @@
              "L:1/16"
              (str "|\"durée de 1\"d2|d2\"durée de 2\"dd"
                   "|d2\"durée de 3\"dddd|d2\"durée de 4\"dddddd|"))
+      [:p "Attention, suivant le nombre de roulés, on change de côté ou non."]
       [:h4 "Croches et flas"]
       (score "croches-flas"
              "L:1/8"
