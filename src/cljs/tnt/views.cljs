@@ -121,8 +121,6 @@
              "L:1/8"
              (phrase 4 "d2" "zd" "dd" "z2"))
 
-
-
       [:p "On peut aussi voir cette phrase comme deux listes de durées : "
           (map str l1) " et " (map str l2) ", ce qui va nous aider à "
           "trouver des doigtés sur le pad et à l’orchestrer sur le kit."]
