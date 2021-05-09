@@ -238,6 +238,9 @@
              "M:12/8"
              "L:1/8"
              (phrase 4 "d3" "(3::2z2d" "(3dzd" "z3"))
+      [:p {:id "triolets-durees"}
+          "Liste des durées avec la phrase en triolets : "
+          (map str l1-3) " et " (map str l2-3) "."]
 
       [:h4 "2.s4 - Swing sur les doubles croches"]
 ; TODO: version débit plutôt que phrase
@@ -262,9 +265,6 @@
       (score "triolets"
              "L:1/8"
              (debit-1 4 "(3" "Xdd" "ddX" "XdX" "ddd"))
-      [:p {:id "triolets-durees"}
-          "Liste des durées triolets : "
-          (map str l1-3) " et " (map str l2-3) "."]
 
       [:h4 "3.2 - Sextolets, 3 groupes de 2"]
       [:p "Le contre-temps est sur le cinquième sextolet, comme si on mettait "
