@@ -11,8 +11,11 @@
                        lines
                        (cons "M:4/4" lines))
         flat (flatten with-meter)
-        with-accents (map #(clojure.string/replace % "X" "!accent!d") flat)
-        final-lines with-accents]
+        with-accents (map #(clojure.string/replace % "X" "!accent!d")
+                          flat)
+        with-flams   (map #(clojure.string/replace % "Y" "{c}!accent!d")
+                          with-accents)
+        final-lines with-flams]
     [:> default {:id id :notation (clojure.string/join "\n" final-lines)}]))
 
 (defn space-join [lst]
@@ -312,9 +315,15 @@
       (score "croches-frise"
              "L:1/8"
              (sticking-1 2 "RL" "" "Xd" "dX" "XX" "dd"))
+      (score "croches-flas"
+             "L:1/8"
+             (sticking-1 2 "RL" "" "Yd" "dY" "YY" "dd"))
       (score "triolets-frise"
              "L:1/8"
              (sticking-1 2 "RL" "(3" "Xdd" "ddX" "XdX" "ddd"))
+      (score "triolets-flas"
+             "L:1/8"
+             (sticking-1 2 "RL" "(3" "Ydd" "ddY" "YdY" "ddd"))
 
       [:h3 "Triolets RLL"]
       [:p "Intéressant ce deuxième coup accentué sur la main faible."]
