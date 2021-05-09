@@ -340,6 +340,8 @@
       (score "triolets-rolls"
              "L:1/8"
              (sticking-1 2 "RL" "(3" "XZZ" "ZZX" "XZX" "ZZZ"))
+      [:p "Ici la liste des durées est "
+          [:a {:href "triolets-durees"} "celle des triolets"] "."]
       [:h4 "Triolets et flas"]
       (score "triolets-flas"
              "L:1/8"
