@@ -93,8 +93,8 @@
     (tnt-sticking :8 per-lines sticking prefix elements))
 
 (defn main-panel []
-  (let [l1 [3 3 2 3 2 4 1 4 1 4 2 3]
-        l2 [1 2 1 2 1 1 1 3 4 1 3 3 1 3 2 1 2]
+  (let [l1 [3 3 2   3 2 4   1 4 1 4 2 3]
+        l2 [1 2 1 2 1 1    1 3 4    1 3 3 1   3 2 1 2]
         l1-3 [5 4 3   5 3 6   1 6 2 6 3 4]
         l2-3 [2 3 1 3 2 1   4 6   2 4 5 1   5 3 1 3]]
     [:div
