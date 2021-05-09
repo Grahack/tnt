@@ -419,6 +419,36 @@
                       "dddddX" "dddXdd" "dddXdX" "ddXddd" "ddXXdd"
                       "Xddddd" "XddddX" "XddXdX" "XdXddd" "XdXddX"))
 
+      [:h3 "Moulins variables"]
+      [:p "L’effet est celui des roulés mais sans trou. "
+          "On se sert des listes des durées pour construire les doigtés. "
+          "On aura, respectivement, pour les durées 1, 2, 3 et 4 "
+          "(idem pour 5 et 6) :"]
+      (score "diddles-explanation"
+             "L:1/16"
+             (str "|\"R\"!accent!d\"L\"d"
+                  "|\"R\"!accent!d\"L\"d\"R\"d\"R\"d"
+                  "|\"R\"!accent!d\"L\"d\"R\"d\"R\"d\"L\"d\"L\"d"
+                  "|\"R\"!accent!d\"L\"d\"R\"d\"R\"d\"L\"d\"L\"d\"R\"d\"R\"d|"))
+      [:p "Et bien sûr si on doit changer de côté :"]
+      (score "diddles-explanation-left-lead"
+             "L:1/16"
+             (str "|\"L\"!accent!d\"R\"d"
+                  "|\"L\"!accent!d\"R\"d\"L\"d\"L\"d"
+                  "|\"L\"!accent!d\"R\"d\"L\"d\"L\"d\"R\"d\"R\"d"
+                  "|\"L\"!accent!d\"R\"d\"L\"d\"L\"d\"R\"d\"R\"d\"L\"d\"L\"d|"))
+      [:h4 "Doubles croches à moulins variables"]
+      [:p "Le son est celui des croches auxquelles on a ajouté une double "
+          "croche sans accent."]
+      (score "doubles-croches-diddles"
+             "L:1/16"
+             (debit-1 2 "" "Xddd" "ddXd" "XdXd" "dddd"))
+      [:h4 "Sextolets à moulins variables"]
+      [:p "Le son est celui des sextolets à trois groupes de deux."]
+      (score "sextolets-diddles"
+             "L:1/16"
+             (debit-1 2 "(6" "Xddddd" "ddddXd" "XdddXd" "dddddd"))
+
       [:h2 {:id "sur-le-kit"}[:a {:href "#sur-le-kit"} "Sur le kit"]]
       [:p "TODO"]
 
