@@ -355,7 +355,7 @@
       (score "noires"
              "M:8/4"
              "L:1/4"
-             (debit-1 4 "Xd" "dX" "XX" "dd"))
+             (debit-1 4 "" "Xd" "dX" "XX" "dd"))
 
       [:br] [:br] [:br] [:br] [:br] [:br] [:br] [:br] [:br] [:br] [:br] [:br]
       [:br] [:br] [:br] [:br] [:br] ]))
