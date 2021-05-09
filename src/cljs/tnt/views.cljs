@@ -279,7 +279,7 @@
       (score "sextolets-deux-fois-plus-vite"
              "L:1/16"
              (debit-2 2 "(6"
-                      "dddddx" "dddxdd" "dddxdx" "ddxddd" "ddxxdd"
+                      "dddddX" "dddXdd" "dddXdX" "ddXddd" "ddXXdd"
                       "Xddddd" "XddddX" "XddXdX" "XdXddd" "XdXddX"))
 
       [:h4 "3.3 - Trois groupes de 3"]
