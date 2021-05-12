@@ -109,12 +109,34 @@
                   :triplets [[5 4 3   5 3 6   1 6 2 6 3 4]
                              [2 3 1 3 2 1   4 6   2 4 5 1   5 3 1 3]]})
 
+(defn lengths [subdivision per-measure per-lines prefix patterns]
+  (->> tnt-lengths
+       (subdivision)                  ; select eights or triplets
+       (flatten)                      ; concat the two lists
+       (map #(get patterns (- % 1)))  ; replace lengths by relevant patterns
+       ; j’ai une liste de listes [[...] [...]]
+       (flatten)                      ; je flatten
+       (partition per-measure)        ; pour regrouper par mesure
+       ; là faudrait faire des paquets de length, sans compter les "|"
+       ; mais c’est dur
+       ; commencer avec des paquets de 2
+       ; (partition 2)
+       (map null-join) ; pour l’instant on stem le contenu de chaque mesure
+       (partition per-lines)
+       (map pipe-join)
+       (map pipe-surround)))
+
 (defn main-panel []
   (let [l1 (first  (:eights tnt-lengths))
         l2 (second (:eights tnt-lengths))
         l1-3 (first  (:triplets tnt-lengths))
         l2-3 (second (:triplets tnt-lengths))]
     [:div
+      #_(map #(identity [:pre (str %)]) (lengths :eights 8 2 ""
+                     [["\"L\"d"]
+                      ["\"L\"d" "\"K\"E"]
+                      ["\"L\"d" "\"R\"G" "\"K\"E"]
+                      ["\"L\"d" "\"R\"G" "\"K\"E" "\"K\"E"]]))
       [:div {:id "links"}
         [:p
           [:a {:href "#debits"} "Débits"] " - "
@@ -493,6 +515,18 @@
                   "|\"floor tom\"G"
                   "|\"gr. caisse\"E|"))
       [:p "(*) Cymbale quelconque, charley, ride ou autre."]
+
+      [:h3 {:id "croches-lrk"} "Croches LRK"]
+      [:p "Quatre durées possibles :"]
+      (let [patterns [["\"L\"d"]
+                      ["\"L\"d" "\"K\"E"]
+                      ["\"L\"d" "\"R\"G" "\"K\"E"]
+                      ["\"L\"d" "\"R\"G" "\"K\"E" "\"K\"E"]]]
+        (score "croches-lrk-score"
+               "L:1/8"
+               (->> patterns (map null-join) (pipe-join) (pipe-surround))
+               "M:4/4"
+               (lengths :eights 8 2 "" patterns)))
 
       [:h2 {:id "bonus"}[:a {:href "#bonus"} "Bonus"]]
       [:p "En bonus, voici la phrase de départ, jouée "
