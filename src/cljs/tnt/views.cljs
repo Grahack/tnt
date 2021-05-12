@@ -109,22 +109,31 @@
                   :triplets [[5 4 3   5 3 6   1 6 2 6 3 4]
                              [2 3 1 3 2 1   4 6   2 4 5 1   5 3 1 3]]})
 
-(defn lengths [subdivision per-measure per-lines prefix patterns]
-  (->> tnt-lengths
-       (subdivision)                  ; select eights or triplets
-       (flatten)                      ; concat the two lists
-       (map #(get patterns (- % 1)))  ; replace lengths by relevant patterns
-       ; j’ai une liste de listes [[...] [...]]
-       (flatten)                      ; je flatten
-       (partition per-measure)        ; pour regrouper par mesure
-       ; là faudrait faire des paquets de length, sans compter les "|"
-       ; mais c’est dur
-       ; commencer avec des paquets de 2
-       ; (partition 2)
-       (map null-join) ; pour l’instant on stem le contenu de chaque mesure
-       (partition per-lines)
-       (map pipe-join)
-       (map pipe-surround)))
+(defn lengths [id L M subdivision per-measure per-lines prefix patterns]
+  [:div {:id id}
+    [:p "Motif pour chaque durée :"]
+    (score (str id "-score-explanation")
+           (str "L:" L)
+           (->> patterns (map null-join) (pipe-join) (pipe-surround)))
+    [:p "Phrase :"]
+    (score (str id "-score")
+           (str "L:" L)
+           (str "M:" M)
+      (->> tnt-lengths
+           (subdivision)                  ; select eights or triplets
+           (flatten)                      ; concat the two lists
+           (map #(get patterns (- % 1)))  ; replace lengths by relevant patterns
+           ; j’ai une liste de listes [[...] [...]]
+           (flatten)                      ; je flatten
+           (partition per-measure)        ; pour regrouper par mesure
+           ; là faudrait faire des paquets de length, sans compter les "|"
+           ; mais c’est dur
+           ; commencer avec des paquets de 2
+           ; (partition 2)
+           (map null-join) ; pour l’instant on stem le contenu de chaque mesure
+           (partition per-lines)
+           (map pipe-join)
+           (map pipe-surround)))])
 
 (defn main-panel []
   (let [l1 (first  (:eights tnt-lengths))
@@ -519,16 +528,11 @@
           "groupées. À l’avenir, seuls les motifs seront groupés."]
 
       [:h3 {:id "croches-lrk"} "Croches LRK"]
-      [:p "Quatre durées possibles :"]
-      (let [patterns [["\"L\"d"]
-                      ["\"L\"d" "\"K\"E"]
-                      ["\"L\"d" "\"R\"G" "\"K\"E"]
-                      ["\"L\"d" "\"R\"G" "\"K\"E" "\"K\"E"]]]
-        (score "croches-lrk-score"
-               "L:1/8"
-               (->> patterns (map null-join) (pipe-join) (pipe-surround))
-               "M:4/4"
-               (lengths :eights 8 2 "" patterns)))
+      (lengths "croches-lrk" "1/8" "4/4" :eights 8 2 ""
+               [["\"L\"d"]
+                ["\"L\"d" "\"K\"E"]
+                ["\"L\"d" "\"R\"G" "\"K\"E"]
+                ["\"L\"d" "\"R\"G" "\"K\"E" "\"K\"E"]])
 
       [:h2 {:id "bonus"}[:a {:href "#bonus"} "Bonus"]]
       [:p "En bonus, voici la phrase de départ, jouée "
