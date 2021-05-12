@@ -542,6 +542,20 @@
                 ["\"R\"d" "\"L\"B" "\"R\"G" "\"K\"E"
                  "\"R\"G" "\"K\"E" "\"R\"G" "\"K\"E"]])
 
+      [:h3 {:id "chabada"} "Chabada"]
+      (score "chabada-score"
+             "L:1/8"
+             "V:1 name=\"Ride\" snm=\"R\""
+             "V:2 name=\"Snare\" snm=\"S\""
+             "V:1"
+             "|f2 ff f2 ff|f2 ff f2 ff|f2 ff f2 ff|f2 ff f2 ff|"
+             "V:2"
+             "|d2 zd z2 d2|d2 zd zd z2|zd d2 z2 dd|z2 zd zd z2|"
+             "V:1"
+             "|f2 ff f2 ff|f2 ff f2 ff|f2 ff f2 ff|f2 ff f2 ff|"
+             "V:2"
+             "|dd zd d2 dd|dd z2 d2 z2|dd z2 d2 zd|d2 zd zd d2|")
+
       [:h2 {:id "bonus"}[:a {:href "#bonus"} "Bonus"]]
       [:p "En bonus, voici la phrase de départ, jouée "
           " « deux fois plus lentement » par rapport à la pulsation. "
