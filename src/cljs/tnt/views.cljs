@@ -534,6 +534,14 @@
                 ["\"L\"d" "\"R\"G" "\"K\"E"]
                 ["\"L\"d" "\"R\"G" "\"K\"E" "\"K\"E"]])
 
+      [:h3 {:id "doubles-croches-rlrkrk"} "Doubles croches RLRKRK"]
+      (lengths "doubles-croches-rlrkrk" "1/16" "4/4" :eights 16 2 ""
+               [["\"R\"d" "\"K\"E" ]
+                ["\"R\"d" "\"L\"B" "\"R\"G" "\"K\"E"]
+                ["\"R\"d" "\"L\"B" "\"R\"G" "\"K\"E" "\"R\"G" "\"K\"E"]
+                ["\"R\"d" "\"L\"B" "\"R\"G" "\"K\"E"
+                 "\"R\"G" "\"K\"E" "\"R\"G" "\"K\"E"]])
+
       [:h2 {:id "bonus"}[:a {:href "#bonus"} "Bonus"]]
       [:p "En bonus, voici la phrase de départ, jouée "
           " « deux fois plus lentement » par rapport à la pulsation. "
