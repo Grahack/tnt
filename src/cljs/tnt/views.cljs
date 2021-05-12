@@ -36,6 +36,11 @@
   [[xoox ooxo xoox oxoo] [oxxo ooxx ooox oxoo]
    [xxox xoxx xxoo xooo] [xxoo xoox xoox oxxo]])
 
+(def lengths {:eights   [[3 3 2   3 2 4   1 4 1 4 2 3]
+                         [1 2 1 2 1 1    1 3 4    1 3 3 1   3 2 1 2]]
+              :triplets [[5 4 3   5 3 6   1 6 2 6 3 4]
+                         [2 3 1 3 2 1   4 6   2 4 5 1   5 3 1 3]]})
+
 (defn prefix-adder-to-elts [prefix] #(map (fn [s] (str prefix s)) %))
 
 (defn tnt [subdivision per-lines prefix elements]
@@ -96,10 +101,10 @@
     (tnt-sticking :16 per-lines sticking prefix elements))
 
 (defn main-panel []
-  (let [l1 [3 3 2   3 2 4   1 4 1 4 2 3]
-        l2 [1 2 1 2 1 1    1 3 4    1 3 3 1   3 2 1 2]
-        l1-3 [5 4 3   5 3 6   1 6 2 6 3 4]
-        l2-3 [2 3 1 3 2 1   4 6   2 4 5 1   5 3 1 3]]
+  (let [l1 (first  (:eights lengths))
+        l2 (second (:eights lengths))
+        l1-3 (first  (:triplets lengths))
+        l2-3 (second (:triplets lengths))]
     [:div
       [:div {:id "links"}
         [:p
