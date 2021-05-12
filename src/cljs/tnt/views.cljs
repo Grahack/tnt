@@ -448,7 +448,7 @@
                   "|\"R\"!accent!d\"L\"d\"R\"d\"R\"d"
                   "|\"R\"!accent!d\"L\"d\"R\"d\"R\"d\"L\"d\"L\"d"
                   "|\"R\"!accent!d\"L\"d\"R\"d\"R\"d\"L\"d\"L\"d\"R\"d\"R\"d|"))
-      [:p "Et bien sûr si on doit changer de côté :"]
+      [:p "Et bien sûr, si on doit changer de côté :"]
       (score "diddles-explanation-left-lead"
              "L:1/16"
              (str "|\"L\"!accent!d\"R\"d"
