@@ -5,6 +5,21 @@
    ["@grahack/react-sheet-music-mirror" :as r-s-m :refer [default]]
    ))
 
+(defn null-join [lst]
+  (clojure.string/join "" lst))
+
+(defn space-join [lst]
+  (clojure.string/join " " lst))
+
+(defn pipe-join [lst]
+  (clojure.string/join "|" lst))
+
+(defn nl-join [lst]
+  (clojure.string/join "\n" lst))
+
+(defn pipe-surround [txt]
+  (str "|" txt "|"))
+
 (defn score [id & lines]
   (let [first-line (first lines)
         with-meter (if (clojure.string/starts-with? first-line "M:")
@@ -18,13 +33,7 @@
         with-rolls   (map #(clojure.string/replace % "Z" "d/2d/2")
                           with-flams)
         final-lines with-rolls]
-    [:> default {:id id :notation (clojure.string/join "\n" final-lines)}]))
-
-(defn space-join [lst]
-  (clojure.string/join " " lst))
-
-(defn pipe-surround [txt]
-  (str "|" txt "|"))
+    [:> default {:id id :notation (nl-join final-lines)}]))
 
 (defn tnt-8 [[d u t r]]  ; down up two rest
   [[d u r d] [d u u r] [u d r t] [r u u r]
@@ -49,9 +58,9 @@
     (->> (subdivision measures)
          (map (prefix-adder-to-elts prefix))
          (partition per-lines)
-         (map #(clojure.string/join "|" (map space-join %)))
+         (map #(pipe-join (map space-join %)))
          (map pipe-surround)
-         (clojure.string/join "\n"))))
+         (nl-join))))
 
 (defn phrase [per-lines & elements]
   (tnt :8 per-lines "" elements))
@@ -71,16 +80,16 @@
                               "\""
                               (second %))]
       (->> measure
-           (clojure.string/join "")  ; flatten
+           (null-join)               ; flatten
            (map vector (range))      ; add numbers
            (map sticked-notes)       ; add stickings
-           (clojure.string/join "")  ; was still a list of notes, flatten
+           (null-join)               ; was still a list of notes, flatten
 
            (partition 4)             ; 4 because "S"n (sticking and note)
-           (map #(clojure.string/join "" %))  ; flatten internal lists
+           (map null-join)           ; flatten internal lists
 
            (partition notes-per-quarter)      ; group by quarters
-           (map #(clojure.string/join "" %))  ; flatten internal lists
+           (map null-join)                    ; flatten internal lists
            ))))
 
 (defn tnt-sticking [subdivision per-lines sticking prefix elements]
@@ -90,9 +99,9 @@
          (map (sticking-adder-to-elts sticking))
          (map (prefix-adder-to-elts prefix))
          (partition per-lines)
-         (map #(clojure.string/join "|" (map space-join %)))
+         (map #(pipe-join (map space-join %)))
          (map pipe-surround)
-         (clojure.string/join "\n"))))
+         (nl-join))))
 
 (defn sticking-1 [per-lines sticking prefix & elements]
     (tnt-sticking :8 per-lines sticking prefix elements))
