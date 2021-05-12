@@ -512,6 +512,17 @@
              (debit-1 2 "(6" "Xddddd" "ddddXd" "XdddXd" "dddddd"))
 
       [:h2 {:id "sur-le-kit"}[:a {:href "#sur-le-kit"} "Sur le kit"]]
+      [:ul
+        [:li [:a {:href "#notation"} "Notation"]]
+        [:li "Croches"
+          [:ul
+            [:li [:a {:href "#croches-lrk"} "LRK"]]]]
+        [:li "Doubles croches"
+          [:ul
+            [:li [:a {:href "#doubles-croches-rlrkrk"} "RLRKRK"]]]
+        [:li "Divers"
+          [:ul
+            [:li [:a {:href "#chabada"} "Chabada"]]]]]]
 
       [:h3 {:id "notation"} "Notation"]
       [:p "Le système de notation utilisé ici ayant quelques limitations, "
