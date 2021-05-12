@@ -472,7 +472,18 @@
              (debit-1 2 "(6" "Xddddd" "ddddXd" "XdddXd" "dddddd"))
 
       [:h2 {:id "sur-le-kit"}[:a {:href "#sur-le-kit"} "Sur le kit"]]
-      [:p "TODO"]
+
+      [:h3 {:id "notation"} "Notation"]
+      [:p "Le système de notation utilisé ici ayant quelques limitations, "
+          "une correspondance « maison » est utilisée :"]
+      (score "kit-explanation"
+             "L:1/4"
+             (str "|\"cymbale (*)\"f"
+                  "|\"caisse\"d"
+                  "|\"rack tom\"B"
+                  "|\"floor tom\"G"
+                  "|\"gr. caisse\"E|"))
+      [:p "(*) Cymbale quelconque, charley, ride ou autre."]
 
       [:h2 {:id "bonus"}[:a {:href "#bonus"} "Bonus"]]
       [:p "En bonus, voici la phrase de départ, jouée "
