@@ -515,6 +515,8 @@
                   "|\"floor tom\"G"
                   "|\"gr. caisse\"E|"))
       [:p "(*) Cymbale quelconque, charley, ride ou autre."]
+      [:p "De plus, toutes les notes d’une mesure sont pour l’instant "
+          "groupées. À l’avenir, seuls les motifs seront groupés."]
 
       [:h3 {:id "croches-lrk"} "Croches LRK"]
       [:p "Quatre durées possibles :"]
