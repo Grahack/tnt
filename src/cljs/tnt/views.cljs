@@ -455,6 +455,10 @@
                   "|\"L\"!accent!d\"R\"d\"L\"d\"L\"d"
                   "|\"L\"!accent!d\"R\"d\"L\"d\"L\"d\"R\"d\"R\"d"
                   "|\"L\"!accent!d\"R\"d\"L\"d\"L\"d\"R\"d\"R\"d\"L\"d\"L\"d|"))
+      [:p "Les doigtés ne sont pas indiqués sur les deux partitions suivantes, "
+          "à vous de les « calculer » ! "
+          "Comme il y a un nombre impair d’accents (29), le doigté est inversé "
+          "à chaque tour."]
       [:h4 {:id "doubles-croches-diddles"} "Doubles croches à moulins variables"]
       [:p "Le son est celui des croches auxquelles on a ajouté une double "
           "croche sans accent."]
