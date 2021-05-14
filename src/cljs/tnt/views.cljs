@@ -524,6 +524,9 @@
         [:li "Doubles croches"
           [:ul
             [:li [:a {:href "#doubles-croches-rlrkrk"} "RLRKRK"]]]
+        [:li "Triolets"
+          [:ul
+            [:li [:a {:href "#triolets-rlrk"} "RLRK"]]]]
         [:li "Divers"
           [:ul
             [:li [:a {:href "#chabada"} "Chabada"]]]]]]
@@ -563,6 +566,15 @@
                 ["\"R\"d" "\"L\"B" "\"R\"G" "\"K\"E" "\"R\"G" "\"K\"E"]
                 ["\"R\"d" "\"L\"B" "\"R\"G" "\"K\"E"
                  "\"R\"G" "\"K\"E" "\"R\"G" "\"K\"E"]])
+
+      [:h3 {:id "triolets-rlrk"} "Triolets RLRK"]
+      (lengths "triolets-rlrk" "1/8" "4/4" :triplets 12 2 ""
+               [["\"R\"d"]
+                ["\"R\"d" "\"K\"E"]
+                ["\"R\"d" "\"R\"G" "\"K\"E"]
+                ["\"R\"d" "\"L\"B" "\"R\"G" "\"K\"E"]
+                ["\"R\"d" "\"L\"B" "\"R\"G" "\"K\"E" "\"K\"E"]
+                ["\"R\"d" "\"L\"B" "\"R\"G" "\"K\"E" "\"R\"G" "\"K\"E"]])
 
       [:h3 {:id "chabada"} "Chabada"]
       (score "chabada-score"
