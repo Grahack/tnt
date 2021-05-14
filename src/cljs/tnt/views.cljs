@@ -26,8 +26,10 @@
                        lines
                        (cons "M:4/4" lines))
         flat (flatten with-meter)
-        with-accents (map #(clojure.string/replace % "X" "!accent!d")
+        with-hertas  (map #(clojure.string/replace % "W" "\"R\"d/2\"L\"B/2")
                           flat)
+        with-accents (map #(clojure.string/replace % "X" "!accent!d")
+                          with-hertas)
         with-flams   (map #(clojure.string/replace % "Y" "{c}!accent!d")
                           with-accents)
         with-rolls   (map #(clojure.string/replace % "Z" "d/2d/2")
@@ -497,8 +499,9 @@
                   "|\"L\"!accent!d\"R\"d\"L\"d\"L\"d\"R\"d\"R\"d\"L\"d\"L\"d|"))
       [:p "Les doigtés ne sont pas indiqués sur les deux partitions suivantes, "
           "à vous de les « calculer » ! "
-          "Comme il y a un nombre impair d’accents (29), le doigté est inversé "
-          "à chaque tour."]
+          "Et pour une raison que je vous laisse découvrir, "
+          "le doigté est inversé à chaque tour sur les deux versions, "
+          "ce qui est très bon pour les adeptes de la Secte des Symétriques."]
       [:h4 {:id "doubles-croches-diddles"} "Doubles croches à moulins variables"]
       [:p "Le son est celui des croches auxquelles on a ajouté une double "
           "croche sans accent."]
@@ -516,7 +519,8 @@
         [:li [:a {:href "#notation"} "Notation"]]
         [:li "Croches"
           [:ul
-            [:li [:a {:href "#croches-lrk"} "LRK"]]]]
+            [:li [:a {:href "#croches-lrk"} "LRK"]]
+            [:li [:a {:href "#hertas-rlrk"} "Hertas RLRK"]]]]
         [:li "Doubles croches"
           [:ul
             [:li [:a {:href "#doubles-croches-rlrkrk"} "RLRKRK"]]]
@@ -544,6 +548,13 @@
                 ["\"L\"d" "\"K\"E"]
                 ["\"L\"d" "\"R\"G" "\"K\"E"]
                 ["\"L\"d" "\"R\"G" "\"K\"E" "\"K\"E"]])
+
+      [:h3 {:id "hertas-rlrk"} "Hertas RLRK"]
+      (lengths "hertas-rlrk" "1/8" "4/4" :eights 8 2 ""
+               [["\"R\"d"]
+                ["W" "\"R\"G"]
+                ["W" "\"R\"G" "\"K\"E"]
+                ["W" "\"R\"G" "\"K\"E" "\"K\"E"]])
 
       [:h3 {:id "doubles-croches-rlrkrk"} "Doubles croches RLRKRK"]
       (lengths "doubles-croches-rlrkrk" "1/16" "4/4" :eights 16 2 ""
