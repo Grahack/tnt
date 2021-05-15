@@ -8,6 +8,7 @@
 /.lein-*
 /.nrepl-port
 
+package-lock.json
 # Node.js dependencies
 /node_modules/
 
