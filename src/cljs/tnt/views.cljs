@@ -49,24 +49,24 @@
 
 (defn prefix-adder-to-elts [prefix] #(map (fn [s] (str prefix s)) %))
 
-(defn tnt [subdivision per-lines prefix elements]
+(defn tnt [subdivision per-line prefix elements]
   (let [measures { :8 (tnt-8  elements)
                   :16 (tnt-16 elements)}]
     (->> (subdivision measures)
          (map (prefix-adder-to-elts prefix))
-         (partition per-lines)
+         (partition per-line)
          (map #(pipe-join (map space-join %)))
          (map pipe-surround)
          (nl-join))))
 
-(defn phrase [per-lines & elements]
-  (tnt :8 per-lines "" elements))
+(defn phrase [per-line & elements]
+  (tnt :8 per-line "" elements))
 
-(defn debit-1 [per-lines prefix & elements]
-  (tnt :8 per-lines prefix elements))
+(defn debit-1 [per-line prefix & elements]
+  (tnt :8 per-line prefix elements))
 
-(defn debit-2 [per-lines prefix & elements]
-  (tnt :16 per-lines prefix elements))
+(defn debit-2 [per-line prefix & elements]
+  (tnt :16 per-line prefix elements))
 
 (defn sticking-adder-to-elts [sticking]
   (fn [measure]
@@ -89,29 +89,29 @@
            (map null-join)                    ; flatten internal lists
            ))))
 
-(defn tnt-sticking [subdivision per-lines sticking prefix elements]
+(defn tnt-sticking [subdivision per-line sticking prefix elements]
   (let [measures { :8 (tnt-8 elements)
                   :16 (tnt-16 elements)}]
     (->> (subdivision measures)
          (map (sticking-adder-to-elts sticking))
          (map (prefix-adder-to-elts prefix))
-         (partition per-lines)
+         (partition per-line)
          (map #(pipe-join (map space-join %)))
          (map pipe-surround)
          (nl-join))))
 
-(defn sticking-1 [per-lines sticking prefix & elements]
-    (tnt-sticking :8 per-lines sticking prefix elements))
+(defn sticking-1 [per-line sticking prefix & elements]
+    (tnt-sticking :8 per-line sticking prefix elements))
 
-(defn sticking-2 [per-lines sticking prefix & elements]
-    (tnt-sticking :16 per-lines sticking prefix elements))
+(defn sticking-2 [per-line sticking prefix & elements]
+    (tnt-sticking :16 per-line sticking prefix elements))
 
 (def tnt-lengths {:eights   [[3 3 2   3 2 4   1 4 1 4 2 3]
                              [1 2 1 2 1 1    1 3 4    1 3 3 1   3 2 1 2]]
                   :triplets [[5 4 3   5 3 6   1 6 2 6 3 4]
                              [2 3 1 3 2 1   4 6   2 4 5 1   5 3 1 3]]})
 
-(defn lengths-lines [subdivision per-quarter per-lines prefix patterns]
+(defn lengths-lines [subdivision per-quarter per-line prefix patterns]
   (->> tnt-lengths
        (subdivision)                  ; select eights or triplets
        (flatten)                      ; concat the two lists
@@ -123,11 +123,11 @@
        (map null-join)                ; et stemer les notes
        (partition 4)                  ; toujours 4 noires par mes
        (map space-join)
-       (partition per-lines)
+       (partition per-line)
        (map pipe-join)
        (map pipe-surround)))
 
-(defn lengths [id L M subdivision per-measure per-lines prefix patterns]
+(defn lengths [id L M subdivision per-measure per-line prefix patterns]
   [:div {:id id}
     [:p "Motif pour chaque durée :"]
     (score (str id "-score-explanation")
@@ -140,7 +140,7 @@
            (let [per-quarter (subdivision {:eights (if (= L "1/16") 4 2)
                                            :triplets 3})
                  sub subdivision]
-             (lengths-lines sub per-quarter per-lines prefix patterns)))])
+             (lengths-lines sub per-quarter per-line prefix patterns)))])
 
 (defn main-panel []
   (let [l1 (first  (:eights tnt-lengths))
