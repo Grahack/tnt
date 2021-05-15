@@ -454,7 +454,7 @@
              "L:1/16"
              (sticking-1 2 "RLLRRL" "(6" "Xddddd" "dddXdd" "XddXdd" "dddddd"))
       [:p "C’est tout. Les sextolets trois groupes de deux n’ont que peu "
-          "de sens en RLL."]
+          "de sens en RLLRRL."]
       [:h4 "Sextolets deux fois plus vite en RLLRRL"]
       [:p "Donc même doigtés que triolets en RLLRRL"]
       (score "sextolets-deux-fois-plus-vite-rllrrl"
@@ -475,7 +475,7 @@
              "L:1/16"
              (sticking-1 2 "RRLRLL" "(6" "Xddddd" "dddXdd" "XddXdd" "dddddd"))
       [:p "C’est tout. Les sextolets trois groupes de deux n’ont que peu "
-          "de sens en RLL."]
+          "de sens en RRLRLL."]
       [:h4 "Sextolets deux fois plus vite en RRLRLL"]
       [:p "Donc même doigtés que triolets en RRLRLL"]
       (score "sextolets-deux-fois-plus-vite-rrlrll"
