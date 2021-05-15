@@ -135,8 +135,8 @@
            (->> patterns (map null-join) (pipe-join) (pipe-surround)))
     [:p "Phrase :"]
     (score (str id "-score")
-           (str "L:" L)
            (str "M:" M)
+           (str "L:" L)
            (let [per-quarter (subdivision {:eights (if (= L "1/16") 4 2)
                                            :triplets 3})
                  sub subdivision]
