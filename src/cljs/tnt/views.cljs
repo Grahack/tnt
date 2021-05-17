@@ -528,7 +528,9 @@
             [:li [:a {:href "#hertas-rlrk"} "Hertas RLRK"]]]]
         [:li "Doubles croches"
           [:ul
-            [:li [:a {:href "#doubles-croches-rlrkrk"} "RLRKRK"]]]
+            [:li [:a {:href "#doubles-croches-rlrkrk"} "RLRKRK"]]
+            [:li [:a {:href "#doubles-croches-rlkkkk"}
+                     "RLKKKK (double pédale)"]]]
         [:li "Triolets"
           [:ul
             [:li [:a {:href "#triolets-rlrk"} "RLRK"]]]]
@@ -571,6 +573,15 @@
                 ["\"R\"d" "\"L\"B" "\"R\"G" "\"K\"E" "\"R\"G" "\"K\"E"]
                 ["\"R\"d" "\"L\"B" "\"R\"G" "\"K\"E"
                  "\"R\"G" "\"K\"E" "\"R\"G" "\"K\"E"]])
+
+      [:h3 {:id "doubles-croches-rlkkkk"}
+           "Doubles croches RLKKKK (avec une double pédale)"]
+      (lengths "doubles-croches-rlkkkk" "1/16" "4/4" :eights 16 2 ""
+               [["\"R\"!accent!d" "\"L\"d" ]
+                ["\"R\"!accent!d" "\"L\"d" "\"K\"E" "\"K\"E"]
+                ["\"R\"!accent!d" "\"L\"d" "\"K\"E" "\"K\"E" "\"K\"E" "\"K\"E"]
+                ["\"R\"!accent!d" "\"L\"d" "\"K\"E" "\"K\"E"
+                 "\"K\"E" "\"K\"E" "\"K\"E" "\"K\"E"]])
 
       [:h3 {:id "triolets-rlrk"} "Triolets RLRK"]
       (lengths "triolets-rlrk" "1/8" "4/4" :triplets 12 2 ""
