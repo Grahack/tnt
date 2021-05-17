@@ -525,7 +525,8 @@
         [:li "Croches"
           [:ul
             [:li [:a {:href "#croches-lrk"} "LRK"]]
-            [:li [:a {:href "#hertas-rlrk"} "Hertas RLRK"]]]]
+            [:li [:a {:href "#hertas-rlrk"} "Hertas RLRK"]]
+            [:li [:a {:href "#sextolets-lkk"} "Sextolets LKK"]]]]
         [:li "Doubles croches"
           [:ul
             [:li [:a {:href "#doubles-croches-rlrkrk"} "RLRKRK"]]
@@ -533,7 +534,8 @@
                      "RLKKKK (double pédale)"]]]
         [:li "Triolets"
           [:ul
-            [:li [:a {:href "#triolets-rlrk"} "RLRK"]]]]
+            [:li [:a {:href "#triolets-rlrk"} "RLRK"]]
+            [:li [:a {:href "#sextolets-lkk-lkl"} "Sextolets LKK/LKL"]]]]
         [:li "Divers"
           [:ul
             [:li [:a {:href "#chabada"} "Chabada"]]]]]]
@@ -566,6 +568,11 @@
                 ["W" "\"R\"G" "\"K\"E"]
                 ["W" "\"R\"G" "\"K\"E" "\"K\"E"]])
 
+      [:h3 {:id "sextolets-lkk"} "Sextolets LKK"]
+      (score "sextolets-lkk-score"
+             "L:1/16"
+             (debit-1 2 "(6" "XEEdEE" "dEEXEE" "XEEXEE" "dEEdEE"))
+
       [:h3 {:id "doubles-croches-rlrkrk"} "Doubles croches RLRKRK"]
       (lengths "doubles-croches-rlrkrk" "1/16" "4/4" :eights 16 2 ""
                [["\"R\"d" "\"K\"E" ]
@@ -591,6 +598,13 @@
                 ["\"R\"d" "\"L\"B" "\"R\"G" "\"K\"E"]
                 ["\"R\"d" "\"L\"B" "\"R\"G" "\"K\"E" "\"K\"E"]
                 ["\"R\"d" "\"L\"B" "\"R\"G" "\"K\"E" "\"R\"G" "\"K\"E"]])
+
+      [:h3 {:id "sextolets-lkk-lkl"} "Sextolets LKK/LKL"]
+      (score "sextolets-lkk-lkl-score"
+             "L:1/16"
+             (debit-2 2 "(6"
+                      "dEEdEX" "dEEXEE" "dEEXEX" "dEXdEE" "dEXXEE"
+                      "XEEdEE" "XEEdEX" "XEEXEX" "XEXdEE" "XEXdEX"))
 
       [:h3 {:id "chabada"} "Chabada"]
       (score "chabada-score"
