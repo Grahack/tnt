@@ -503,7 +503,9 @@
                   "|\"L\"!accent!d\"R\"d\"L\"d\"L\"d\"R\"d\"R\"d"
                   "|\"L\"!accent!d\"R\"d\"L\"d\"L\"d\"R\"d\"R\"d\"L\"d\"L\"d|"))
       [:p "Les doigtés ne sont pas indiqués sur les deux partitions suivantes, "
-          "à vous de les « calculer » ! "
+          "à vous de les « calculer » ! En effet, suivant la durée d’un motif, "
+          "on peut avoir à changer ou non de main (ce qui n’a pas été "
+          "résolu techniquement pour la production de cette page). "
           "Et pour une raison que je vous laisse découvrir, "
           "le doigté est inversé à chaque tour sur les deux versions, "
           "ce qui est très bon pour les adeptes de la Secte des Symétriques."]
