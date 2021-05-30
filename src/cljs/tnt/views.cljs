@@ -373,7 +373,7 @@
             [:li [:a {:href "#rll"} "RLL"]]
             [:li [:a {:href "#rllrrl"} "RLLRRL"]]
             [:li [:a {:href "#rrlrll"} "RRLRLL"]]]]
-        [:li "Moulins variables"
+        [:li [:a {:href "#moulins-variables"} "Moulins variables"]
           [:ul
             [:li [:a {:href "#doubles-croches-diddles"} "Doubles croches"]]
             [:li [:a {:href "#sextolets-diddles"} "Sextolets"]]]]]
@@ -484,7 +484,7 @@
                       "dddddX" "dddXdd" "dddXdX" "ddXddd" "ddXXdd"
                       "Xddddd" "XddddX" "XddXdX" "XdXddd" "XdXddX"))
 
-      [:h3 "Moulins variables"]
+      [:h3 {:id "moulins-variables"} "Moulins variables"]
       [:p "L’effet est celui des roulés mais sans trou. "
           "On se sert des listes des durées pour construire les doigtés. "
           "On aura, respectivement, pour les durées 1, 2, 3 et 4 "
